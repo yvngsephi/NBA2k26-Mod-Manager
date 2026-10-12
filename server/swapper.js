@@ -289,10 +289,19 @@ class SwapperEngine {
       if (!floorSource && effectiveArena && !matchedMod) {
         floorSource = effectiveArena.replace('_int', '_int_floor');
       }
-      if (floorSource && !matchedMod && floorSource !== arenaSource) {
+      if (floorSource && !matchedMod) {
         const okFloor = this.deployFileFromGameOrDisk(floorSource, floorDests, true);
         if (okFloor) {
           appliedFiles.push('levels/arena_blacktop_ext_floor.iff');
+        }
+      } else if (matchedMod) {
+        // Remove lingering NBA floor files if switching to a street court
+        for (const d of floorDests) {
+          try {
+            if (fs.existsSync(d)) fs.unlinkSync(d);
+          } catch {
+            // Ignore
+          }
         }
       }
     } else {
