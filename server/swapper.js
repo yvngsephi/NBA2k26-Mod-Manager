@@ -6,6 +6,7 @@ const { execFileSync } = require('node:child_process');
 const userHome = process.env.USERPROFILE || os.homedir();
 const PYTHON_BIN = process.env.PYTHON_BIN || path.join(userHome, 'Downloads', '2k26mods', '2kvenuelab', 'app', 'python', 'python.exe');
 const UNPACK_TOOL = process.env.UNPACK_TOOL || path.join(userHome, 'Downloads', '2k26mods', '2kvenuelab', 'app', 'tools', 'nba2k26_unpack_iff.py');
+const MERGE_TOOL = path.join(__dirname, 'merge_floor.py');
 
 const TEAM_MAP = {
   blacktop: 'blacktop',
@@ -89,17 +90,84 @@ class SwapperEngine {
     return `levels/arena_${clean}.iff`;
   }
 
+  resolveLocalSource(code, isFloor = false) {
+    if (!code) return null;
+    if (fs.existsSync(code)) return code;
+
+    let clean = String(code).replace(/\.iff$/, '').replace(/\\/g, '/');
+    if (clean.startsWith('levels/')) clean = clean.replace(/^levels\//, '');
+    if (clean.startsWith('arena_')) clean = clean.replace(/^arena_/, '');
+    if (clean.startsWith('floor_')) {
+      clean = clean.replace(/^floor_/, '');
+      isFloor = true;
+    }
+
+    const candidates = [];
+    if (isFloor) {
+      candidates.push(
+        path.join(this.modsPath, `arena_${clean}_floor.iff`),
+        path.join(this.modsPath, `${clean}_floor.iff`),
+        path.join(this.modsPath, `arena_${clean}.iff`),
+        path.join(this.modsPath, `${clean}.iff`),
+        path.join(this.getLevelsDir(), `arena_${clean}_floor.iff`),
+        path.join(this.getLevelsDir(), `${clean}_floor.iff`)
+      );
+    } else {
+      candidates.push(
+        path.join(this.modsPath, `arena_${clean}.iff`),
+        path.join(this.modsPath, `${clean}.iff`),
+        path.join(this.getLevelsDir(), `arena_${clean}.iff`),
+        path.join(this.getLevelsDir(), `${clean}.iff`)
+      );
+      const courtskoDir = path.join(this.modsPath, 'courtsko');
+      if (fs.existsSync(courtskoDir)) {
+        try {
+          const subs = fs.readdirSync(courtskoDir);
+          for (const s of subs) {
+            candidates.push(
+              path.join(courtskoDir, s, 'arena_blacktop_ext.iff'),
+              path.join(courtskoDir, s, `arena_${clean}.iff`),
+              path.join(courtskoDir, s, `${clean}.iff`)
+            );
+          }
+        } catch {}
+      }
+    }
+
+    for (const cand of candidates) {
+      if (fs.existsSync(cand)) {
+        try {
+          if (fs.statSync(cand).isFile()) return cand;
+        } catch {}
+      }
+    }
+    return null;
+  }
+
+  mergeFloorIntoArena(arenaPath, floorPath) {
+    if (!fs.existsSync(arenaPath) || !fs.existsSync(floorPath)) return false;
+    if (!fs.existsSync(PYTHON_BIN) || !fs.existsSync(MERGE_TOOL)) return false;
+    try {
+      execFileSync(PYTHON_BIN, [MERGE_TOOL, arenaPath, floorPath], { stdio: 'pipe' });
+      return true;
+    } catch (err) {
+      console.error('Merge floor into arena warning:', err.message);
+      return false;
+    }
+  }
+
   deployFileFromGameOrDisk(source, destPaths, isFloor = false) {
     if (!source || !destPaths || destPaths.length === 0) return false;
 
-    // Check if source is an existing file on disk (e.g. downloaded mod in courtsko or test mock)
-    if (fs.existsSync(source)) {
+    // 1. Check if source resolves to a local file on disk
+    const localFile = this.resolveLocalSource(source, isFloor);
+    if (localFile && fs.existsSync(localFile)) {
       try {
         const firstDest = destPaths[0];
         const dir = path.dirname(firstDest);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
         if (fs.existsSync(firstDest)) fs.unlinkSync(firstDest);
-        fs.copyFileSync(source, firstDest);
+        fs.copyFileSync(localFile, firstDest);
 
         for (let i = 1; i < destPaths.length; i++) {
           const d = destPaths[i];
@@ -293,6 +361,10 @@ class SwapperEngine {
         const okFloor = this.deployFileFromGameOrDisk(floorSource, floorDests, true);
         if (okFloor) {
           appliedFiles.push('levels/arena_blacktop_ext_floor.iff');
+          // Merge floor into the main arena iff so Blacktop natively displays the hardwood floor
+          for (let i = 0; i < arenaDests.length; i++) {
+            this.mergeFloorIntoArena(arenaDests[i], floorDests[i]);
+          }
         }
       } else if (matchedMod) {
         // Remove lingering NBA floor files if switching to a street court
