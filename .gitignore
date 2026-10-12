@@ -1,0 +1,11 @@
+node_modules/
+library/extracted/
+.env
+.env.*
+*.log
+*.tmp
+tests/tmp/
+tests/tmp_*/
+tests/tmp*
+.DS_Store
+Thumbs.db

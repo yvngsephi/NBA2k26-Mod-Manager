@@ -1,0 +1,263 @@
+[
+  {
+    "id": "real-rucker",
+    "name": "Rucker Park",
+    "subtitle": "Harlem, NYC (Custom Mod)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Outdoor Asphalt (712 MB)",
+    "isLocalMod": true,
+    "files": {
+      "blacktop": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\NBA 2K26\\Mods\\courtsko\\rucker\\arena_blacktop_ext.iff"
+    }
+  },
+  {
+    "id": "real-parqal",
+    "name": "Parqal Court",
+    "subtitle": "Metro Manila (Custom Mod)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Outdoor Hardcourt (578 MB)",
+    "isLocalMod": true,
+    "files": {
+      "blacktop": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\NBA 2K26\\Mods\\courtsko\\parqal\\arena_blacktop_ext.iff"
+    }
+  },
+  {
+    "id": "real-pivot-point",
+    "name": "Pivot Point",
+    "subtitle": "Training Facility (Custom Mod)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Covered Hardcourt (127 MB)",
+    "isLocalMod": true,
+    "files": {
+      "blacktop": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\NBA 2K26\\Mods\\courtsko\\pivot point\\arena_blacktop_ext.iff"
+    }
+  },
+  {
+    "id": "real-gym",
+    "name": "Practice Gym",
+    "subtitle": "Outdoor Bleachers (Custom Mod)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Outdoor Practice Court (58 MB)",
+    "isLocalMod": true,
+    "files": {
+      "blacktop": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\NBA 2K26\\Mods\\courtsko\\gym\\arena_blacktop_ext.iff"
+    }
+  },
+  {
+    "id": "builtin-madison-square-garden",
+    "name": "Madison Square Garden",
+    "subtitle": "New York Knicks (Game Files)",
+    "category": "nba",
+    "team": "New York Knicks",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_018_int.iff",
+      "floor": "levels/arena_018_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-united-center",
+    "name": "United Center",
+    "subtitle": "Chicago Bulls (Game Files)",
+    "category": "nba",
+    "team": "Chicago Bulls",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_003_int.iff",
+      "floor": "levels/arena_003_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-td-garden",
+    "name": "TD Garden",
+    "subtitle": "Boston Celtics (Game Files)",
+    "category": "nba",
+    "team": "Boston Celtics",
+    "courtType": "Official NBA Parquet",
+    "files": {
+      "stadium": "levels/arena_001_int.iff",
+      "floor": "levels/arena_001_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-crypto-arena",
+    "name": "Crypto.com Arena",
+    "subtitle": "Los Angeles Lakers (Game Files)",
+    "category": "nba",
+    "team": "Los Angeles Lakers",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_015_int.iff",
+      "floor": "levels/arena_015_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-chase-center",
+    "name": "Chase Center",
+    "subtitle": "Golden State Warriors (Game Files)",
+    "category": "nba",
+    "team": "Golden State Warriors",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_009_int.iff",
+      "floor": "levels/arena_009_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-kaseya-center",
+    "name": "Kaseya Center",
+    "subtitle": "Miami Heat (Game Files)",
+    "category": "nba",
+    "team": "Miami Heat",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_014_int.iff",
+      "floor": "levels/arena_014_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-barclays-center",
+    "name": "Barclays Center",
+    "subtitle": "Brooklyn Nets (Game Files)",
+    "category": "nba",
+    "team": "Brooklyn Nets",
+    "courtType": "Official Grey Herringbone",
+    "files": {
+      "stadium": "levels/arena_017_int.iff",
+      "floor": "levels/arena_017_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-ball-arena",
+    "name": "Ball Arena",
+    "subtitle": "Denver Nuggets (Game Files)",
+    "category": "nba",
+    "team": "Denver Nuggets",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_006_int.iff",
+      "floor": "levels/arena_006_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-wells-fargo",
+    "name": "Wells Fargo Center",
+    "subtitle": "Philadelphia 76ers (Game Files)",
+    "category": "nba",
+    "team": "Philadelphia 76ers",
+    "courtType": "Official NBA Arena",
+    "files": {
+      "stadium": "levels/arena_000_int.iff",
+      "floor": "levels/arena_000_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-era-90s",
+    "name": "1990s Era Arena",
+    "subtitle": "Classic Jordan Era (Game Files)",
+    "category": "classic",
+    "team": "Retro NBA",
+    "courtType": "Historic 90s Stadium",
+    "files": {
+      "stadium": "levels/arena_era90s_int.iff",
+      "floor": "levels/arena_era90s_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-era-80s",
+    "name": "1980s Era Arena",
+    "subtitle": "Classic Bird & Magic Era (Game Files)",
+    "category": "classic",
+    "team": "Retro NBA",
+    "courtType": "Historic 80s Stadium",
+    "files": {
+      "stadium": "levels/arena_era80s_int.iff",
+      "floor": "levels/arena_era80s_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-era-00s",
+    "name": "2000s Era Arena",
+    "subtitle": "Classic Kobe Era (Game Files)",
+    "category": "classic",
+    "team": "Retro NBA",
+    "courtType": "Historic 2000s Stadium",
+    "files": {
+      "stadium": "levels/arena_era00s_int.iff",
+      "floor": "levels/arena_era00s_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-fiba",
+    "name": "FIBA World Arena",
+    "subtitle": "International Olympics (Game Files)",
+    "category": "classic",
+    "team": "FIBA",
+    "courtType": "International Hardwood",
+    "files": {
+      "stadium": "levels/arena_fiba_int.iff",
+      "floor": "levels/arena_fiba_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-nba-cup",
+    "name": "NBA Cup Arena",
+    "subtitle": "In-Season Tournament (Game Files)",
+    "category": "classic",
+    "team": "NBA Cup",
+    "courtType": "Painted Tournament Floor",
+    "files": {
+      "stadium": "levels/arena_inseasontournament_int.iff",
+      "floor": "levels/arena_inseasontournament_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-mycourt",
+    "name": "MyCourt Practice Facility",
+    "subtitle": "Personal Gym (Game Files)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Indoor Private Facility",
+    "files": {
+      "stadium": "levels/arena_mycourt_int.iff",
+      "floor": "levels/arena_mycourt_int_floor.iff"
+    }
+  },
+  {
+    "id": "builtin-park-2k15",
+    "name": "2K15 Old Town Sunset",
+    "subtitle": "Classic Park (Game Files)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Historic Sunset Beach Park",
+    "files": {
+      "blacktop": "levels/park_2k15oldtown_ext.iff"
+    }
+  },
+  {
+    "id": "builtin-park-2k16",
+    "name": "2K16 Sunset Beach",
+    "subtitle": "Classic Park (Game Files)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "Historic Sunset Park",
+    "files": {
+      "blacktop": "levels/park_2k16sunset_ext.iff"
+    }
+  },
+  {
+    "id": "builtin-streetball-main",
+    "name": "Streetball Main Park",
+    "subtitle": "City Park (Game Files)",
+    "category": "street",
+    "team": "Streetball",
+    "courtType": "City Street Park",
+    "files": {
+      "blacktop": "levels/park_streetballmain_ext.iff"
+    }
+  }
+]

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA 2K26 Live Court & Floor Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="brand-section">
+      <h1 class="brand-title">NBA 2K26 Live Court & Floor Editor</h1>
+      <span class="version-tag">Studio v2.4</span>
+    </div>
+    <div class="header-right">
+      <div id="gameStatusPill" class="status-pill status-standby">
+        <span class="status-dot"></span>
+        <span id="gameStatusText">Standby: Searching for NBA 2K26...</span>
+      </div>
+      <button id="refreshStatusBtn" class="btn btn-ghost" title="Refresh Live Status">Refresh</button>
+    </div>
+  </header>
+
+  <!-- Workspace Container -->
+  <div class="app-workspace">
+    <!-- Left Sidebar: Teams Navigation -->
+    <aside class="sidebar-teams">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Select Team</div>
+        <input type="text" id="teamSearchInput" class="input-filter" placeholder="Filter teams...">
+      </div>
+      <div class="team-list" id="teamList">
+        <!-- Rendered via app.js -->
+      </div>
+    </aside>
+
+    <!-- Main Content Area: Editor Workspace -->
+    <main class="editor-main">
+      <!-- Active Team Summary Card -->
+      <section class="active-team-card">
+        <div class="team-identity">
+          <span id="teamBadge" class="team-abbr-badge">MIA</span>
+          <div class="team-details">
+            <h2 id="teamHeading" class="team-heading">Miami Heat</h2>
+            <div class="team-assignment-meta">
+              <span class="meta-item">Default: <strong id="teamDefaultArena">Kaseya Center (014)</strong></span>
+              <span class="meta-item">Floor: <strong id="teamDefaultFloor">Miami Heat Floor (014)</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="active-state-box">
+          <div class="state-label">Current Configuration</div>
+          <div id="activeConfigSummary" class="state-value">Official Default (Unmodified)</div>
+        </div>
+      </section>
+
+      <!-- Selection Mode Tabs -->
+      <nav class="editor-tabs">
+        <button class="editor-tab active" data-pane="arenasPane">Arena / Court</button>
+        <button class="editor-tab" data-pane="floorsPane">Floor Pattern</button>
+      </nav>
+
+      <!-- Pane 1: Arena / Court Picker -->
+      <section id="arenasPane" class="tab-pane active">
+        <div class="pane-toolbar">
+          <div class="category-tabs" id="arenaCategoryTabs">
+            <button class="tab-btn active" data-category="all">All Arenas</button>
+            <button class="tab-btn" data-category="nba">NBA Official</button>
+            <button class="tab-btn" data-category="classic">Classic / Era</button>
+            <button class="tab-btn" data-category="street">Street & Parks</button>
+            <button class="tab-btn" data-category="mods">Downloaded Mods</button>
+          </div>
+          <input type="text" id="arenaSearchInput" class="input-search" placeholder="Search 150+ arenas...">
+        </div>
+        <div class="court-grid" id="arenaGrid">
+          <!-- Rendered via app.js -->
+        </div>
+      </section>
+
+      <!-- Pane 2: Floor Pattern Picker -->
+      <section id="floorsPane" class="tab-pane">
+        <div class="pane-toolbar">
+          <div class="floor-sync-toggle">
+            <label class="checkbox-label">
+              <input type="checkbox" id="syncFloorCheckbox" checked>
+              <span>Auto-match floor to selected arena (Recommended)</span>
+            </label>
+          </div>
+          <input type="text" id="floorSearchInput" class="input-search" placeholder="Search floors...">
+        </div>
+        <div class="floor-grid" id="floorGrid">
+          <!-- Rendered via app.js -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Bottom Action Dock -->
+  <footer class="action-dock">
+    <div class="dock-summary">
+      <div class="dock-row">
+        <span class="dock-label">Target Team:</span>
+        <span id="dockTargetTeam" class="dock-value">Miami Heat</span>
+      </div>
+      <div class="dock-row">
+        <span class="dock-label">Selected Court:</span>
+        <span id="dockSelectedArena" class="dock-value">None</span>
+      </div>
+      <div class="dock-row">
+        <span class="dock-label">Selected Floor:</span>
+        <span id="dockSelectedFloor" class="dock-value">Auto (Matched)</span>
+      </div>
+    </div>
+    <div class="dock-mode-indicator">
+      <span class="mode-tag">Direct Memory Connect</span>
+      <span class="mode-sub">0 Archive Extraction &bull; Instant Shard Stream</span>
+    </div>
+    <div class="dock-actions">
+      <button id="resetBtn" class="btn btn-secondary">Reset to Default</button>
+      <button id="applyBtn" class="btn btn-primary" disabled>Apply to Team (Live)</button>
+    </div>
+  </footer>
+
+  <!-- Realtime Diagnostic Console Line -->
+  <div class="diagnostic-bar">
+    <span class="diag-label">SYSTEM CONSOLE</span>
+    <span id="diagnosticMsg" class="diag-text">Engine ready. Waiting for NBA 2K26 execution.</span>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

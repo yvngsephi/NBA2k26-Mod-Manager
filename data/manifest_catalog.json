@@ -1,0 +1,2847 @@
+{
+  "arenas": [
+    {
+      "id": "arena_700_int",
+      "code": "700_int",
+      "rawCode": "700",
+      "name": "Arena 700_int",
+      "category": "classic",
+      "path": "levels/arena_700_int.iff",
+      "shard": "0B",
+      "size": 16152063
+    },
+    {
+      "id": "arena_029_int",
+      "code": "029_int",
+      "rawCode": "029",
+      "name": "Toronto Raptors Arena",
+      "category": "nba",
+      "path": "levels/arena_029_int.iff",
+      "shard": "0G",
+      "size": 46562638
+    },
+    {
+      "id": "arena_729_int",
+      "code": "729_int",
+      "rawCode": "729",
+      "name": "Arena 729_int",
+      "category": "classic",
+      "path": "levels/arena_729_int.iff",
+      "shard": "0G",
+      "size": 6524578
+    },
+    {
+      "id": "arena_032_int",
+      "code": "032_int",
+      "rawCode": "032",
+      "name": "NBA Special Arena",
+      "category": "nba",
+      "path": "levels/arena_032_int.iff",
+      "shard": "0O",
+      "size": 18420472
+    },
+    {
+      "id": "arena_302_int",
+      "code": "302_int",
+      "rawCode": "302",
+      "name": "Arena 302_int",
+      "category": "classic",
+      "path": "levels/arena_302_int.iff",
+      "shard": "0O",
+      "size": 39090441
+    },
+    {
+      "id": "arena_303_int",
+      "code": "303_int",
+      "rawCode": "303",
+      "name": "Arena 303_int",
+      "category": "classic",
+      "path": "levels/arena_303_int.iff",
+      "shard": "0O",
+      "size": 39399980
+    },
+    {
+      "id": "arena_304_int",
+      "code": "304_int",
+      "rawCode": "304",
+      "name": "Arena 304_int",
+      "category": "classic",
+      "path": "levels/arena_304_int.iff",
+      "shard": "0O",
+      "size": 47109827
+    },
+    {
+      "id": "arena_305_int",
+      "code": "305_int",
+      "rawCode": "305",
+      "name": "Arena 305_int",
+      "category": "classic",
+      "path": "levels/arena_305_int.iff",
+      "shard": "0O",
+      "size": 44971902
+    },
+    {
+      "id": "arena_308_int",
+      "code": "308_int",
+      "rawCode": "308",
+      "name": "Arena 308_int",
+      "category": "classic",
+      "path": "levels/arena_308_int.iff",
+      "shard": "0O",
+      "size": 56945130
+    },
+    {
+      "id": "arena_315_int",
+      "code": "315_int",
+      "rawCode": "315",
+      "name": "Arena 315_int",
+      "category": "classic",
+      "path": "levels/arena_315_int.iff",
+      "shard": "0O",
+      "size": 44985856
+    },
+    {
+      "id": "arena_551_int",
+      "code": "551_int",
+      "rawCode": "551",
+      "name": "Arena 551_int",
+      "category": "classic",
+      "path": "levels/arena_551_int.iff",
+      "shard": "0O",
+      "size": 19183292
+    },
+    {
+      "id": "arena_552_int",
+      "code": "552_int",
+      "rawCode": "552",
+      "name": "Arena 552_int",
+      "category": "classic",
+      "path": "levels/arena_552_int.iff",
+      "shard": "0O",
+      "size": 15607032
+    },
+    {
+      "id": "arena_553_int",
+      "code": "553_int",
+      "rawCode": "553",
+      "name": "Arena 553_int",
+      "category": "classic",
+      "path": "levels/arena_553_int.iff",
+      "shard": "0O",
+      "size": 19713883
+    },
+    {
+      "id": "arena_554_int",
+      "code": "554_int",
+      "rawCode": "554",
+      "name": "Arena 554_int",
+      "category": "classic",
+      "path": "levels/arena_554_int.iff",
+      "shard": "0O",
+      "size": 15563502
+    },
+    {
+      "id": "arena_555_int",
+      "code": "555_int",
+      "rawCode": "555",
+      "name": "Arena 555_int",
+      "category": "classic",
+      "path": "levels/arena_555_int.iff",
+      "shard": "0O",
+      "size": 19565852
+    },
+    {
+      "id": "arena_556_int",
+      "code": "556_int",
+      "rawCode": "556",
+      "name": "Arena 556_int",
+      "category": "classic",
+      "path": "levels/arena_556_int.iff",
+      "shard": "0O",
+      "size": 22920026
+    },
+    {
+      "id": "arena_557_int",
+      "code": "557_int",
+      "rawCode": "557",
+      "name": "Arena 557_int",
+      "category": "classic",
+      "path": "levels/arena_557_int.iff",
+      "shard": "0O",
+      "size": 23577928
+    },
+    {
+      "id": "arena_558_int",
+      "code": "558_int",
+      "rawCode": "558",
+      "name": "Arena 558_int",
+      "category": "classic",
+      "path": "levels/arena_558_int.iff",
+      "shard": "0O",
+      "size": 15506109
+    },
+    {
+      "id": "arena_559_int",
+      "code": "559_int",
+      "rawCode": "559",
+      "name": "Arena 559_int",
+      "category": "classic",
+      "path": "levels/arena_559_int.iff",
+      "shard": "0O",
+      "size": 36689305
+    },
+    {
+      "id": "arena_560_int",
+      "code": "560_int",
+      "rawCode": "560",
+      "name": "Arena 560_int",
+      "category": "classic",
+      "path": "levels/arena_560_int.iff",
+      "shard": "0O",
+      "size": 53170056
+    },
+    {
+      "id": "arena_562_int",
+      "code": "562_int",
+      "rawCode": "562",
+      "name": "Arena 562_int",
+      "category": "classic",
+      "path": "levels/arena_562_int.iff",
+      "shard": "0O",
+      "size": 15512373
+    },
+    {
+      "id": "arena_564_int",
+      "code": "564_int",
+      "rawCode": "564",
+      "name": "Arena 564_int",
+      "category": "classic",
+      "path": "levels/arena_564_int.iff",
+      "shard": "0O",
+      "size": 34121723
+    },
+    {
+      "id": "arena_570_int",
+      "code": "570_int",
+      "rawCode": "570",
+      "name": "Arena 570_int",
+      "category": "classic",
+      "path": "levels/arena_570_int.iff",
+      "shard": "0O",
+      "size": 13909361
+    },
+    {
+      "id": "arena_571_int",
+      "code": "571_int",
+      "rawCode": "571",
+      "name": "Arena 571_int",
+      "category": "classic",
+      "path": "levels/arena_571_int.iff",
+      "shard": "0O",
+      "size": 14741726
+    },
+    {
+      "id": "arena_574_int",
+      "code": "574_int",
+      "rawCode": "574",
+      "name": "Arena 574_int",
+      "category": "classic",
+      "path": "levels/arena_574_int.iff",
+      "shard": "0O",
+      "size": 51932775
+    },
+    {
+      "id": "arena_576_int",
+      "code": "576_int",
+      "rawCode": "576",
+      "name": "Arena 576_int",
+      "category": "classic",
+      "path": "levels/arena_576_int.iff",
+      "shard": "0O",
+      "size": 15463196
+    },
+    {
+      "id": "arena_578_int",
+      "code": "578_int",
+      "rawCode": "578",
+      "name": "Arena 578_int",
+      "category": "classic",
+      "path": "levels/arena_578_int.iff",
+      "shard": "0O",
+      "size": 23895080
+    },
+    {
+      "id": "arena_583_int",
+      "code": "583_int",
+      "rawCode": "583",
+      "name": "Arena 583_int",
+      "category": "classic",
+      "path": "levels/arena_583_int.iff",
+      "shard": "0O",
+      "size": 15871750
+    },
+    {
+      "id": "arena_586_int",
+      "code": "586_int",
+      "rawCode": "586",
+      "name": "Arena 586_int",
+      "category": "classic",
+      "path": "levels/arena_586_int.iff",
+      "shard": "0O",
+      "size": 15444966
+    },
+    {
+      "id": "arena_588_int",
+      "code": "588_int",
+      "rawCode": "588",
+      "name": "Arena 588_int",
+      "category": "classic",
+      "path": "levels/arena_588_int.iff",
+      "shard": "0O",
+      "size": 15344202
+    },
+    {
+      "id": "arena_589_int",
+      "code": "589_int",
+      "rawCode": "589",
+      "name": "Arena 589_int",
+      "category": "classic",
+      "path": "levels/arena_589_int.iff",
+      "shard": "0O",
+      "size": 15480254
+    },
+    {
+      "id": "arena_590_int",
+      "code": "590_int",
+      "rawCode": "590",
+      "name": "Arena 590_int",
+      "category": "classic",
+      "path": "levels/arena_590_int.iff",
+      "shard": "0O",
+      "size": 21235158
+    },
+    {
+      "id": "arena_591_int",
+      "code": "591_int",
+      "rawCode": "591",
+      "name": "Arena 591_int",
+      "category": "classic",
+      "path": "levels/arena_591_int.iff",
+      "shard": "0O",
+      "size": 22860802
+    },
+    {
+      "id": "arena_592_int",
+      "code": "592_int",
+      "rawCode": "592",
+      "name": "Arena 592_int",
+      "category": "classic",
+      "path": "levels/arena_592_int.iff",
+      "shard": "0O",
+      "size": 15335077
+    },
+    {
+      "id": "arena_593_int",
+      "code": "593_int",
+      "rawCode": "593",
+      "name": "Arena 593_int",
+      "category": "classic",
+      "path": "levels/arena_593_int.iff",
+      "shard": "0O",
+      "size": 24235908
+    },
+    {
+      "id": "arena_594_int",
+      "code": "594_int",
+      "rawCode": "594",
+      "name": "Arena 594_int",
+      "category": "classic",
+      "path": "levels/arena_594_int.iff",
+      "shard": "0O",
+      "size": 15377636
+    },
+    {
+      "id": "arena_595_int",
+      "code": "595_int",
+      "rawCode": "595",
+      "name": "Arena 595_int",
+      "category": "classic",
+      "path": "levels/arena_595_int.iff",
+      "shard": "0O",
+      "size": 48427226
+    },
+    {
+      "id": "arena_620_int",
+      "code": "620_int",
+      "rawCode": "620",
+      "name": "Arena 620_int",
+      "category": "classic",
+      "path": "levels/arena_620_int.iff",
+      "shard": "0O",
+      "size": 46205424
+    },
+    {
+      "id": "arena_621_int",
+      "code": "621_int",
+      "rawCode": "621",
+      "name": "Arena 621_int",
+      "category": "classic",
+      "path": "levels/arena_621_int.iff",
+      "shard": "0O",
+      "size": 43726383
+    },
+    {
+      "id": "arena_622_int",
+      "code": "622_int",
+      "rawCode": "622",
+      "name": "Arena 622_int",
+      "category": "classic",
+      "path": "levels/arena_622_int.iff",
+      "shard": "0O",
+      "size": 30699390
+    },
+    {
+      "id": "arena_623_int",
+      "code": "623_int",
+      "rawCode": "623",
+      "name": "Arena 623_int",
+      "category": "classic",
+      "path": "levels/arena_623_int.iff",
+      "shard": "0O",
+      "size": 46739829
+    },
+    {
+      "id": "arena_624_int",
+      "code": "624_int",
+      "rawCode": "624",
+      "name": "Arena 624_int",
+      "category": "classic",
+      "path": "levels/arena_624_int.iff",
+      "shard": "0O",
+      "size": 20103374
+    },
+    {
+      "id": "arena_625_int",
+      "code": "625_int",
+      "rawCode": "625",
+      "name": "Arena 625_int",
+      "category": "classic",
+      "path": "levels/arena_625_int.iff",
+      "shard": "0O",
+      "size": 40700050
+    },
+    {
+      "id": "arena_626_int",
+      "code": "626_int",
+      "rawCode": "626",
+      "name": "Arena 626_int",
+      "category": "classic",
+      "path": "levels/arena_626_int.iff",
+      "shard": "0O",
+      "size": 37404032
+    },
+    {
+      "id": "arena_627_int",
+      "code": "627_int",
+      "rawCode": "627",
+      "name": "Arena 627_int",
+      "category": "classic",
+      "path": "levels/arena_627_int.iff",
+      "shard": "0O",
+      "size": 33712809
+    },
+    {
+      "id": "arena_628_int",
+      "code": "628_int",
+      "rawCode": "628",
+      "name": "Arena 628_int",
+      "category": "classic",
+      "path": "levels/arena_628_int.iff",
+      "shard": "0O",
+      "size": 52701829
+    },
+    {
+      "id": "arena_629_int",
+      "code": "629_int",
+      "rawCode": "629",
+      "name": "Arena 629_int",
+      "category": "classic",
+      "path": "levels/arena_629_int.iff",
+      "shard": "0O",
+      "size": 49226526
+    },
+    {
+      "id": "arena_630_int",
+      "code": "630_int",
+      "rawCode": "630",
+      "name": "Arena 630_int",
+      "category": "classic",
+      "path": "levels/arena_630_int.iff",
+      "shard": "0O",
+      "size": 41438019
+    },
+    {
+      "id": "arena_631_int",
+      "code": "631_int",
+      "rawCode": "631",
+      "name": "Arena 631_int",
+      "category": "classic",
+      "path": "levels/arena_631_int.iff",
+      "shard": "0O",
+      "size": 33353537
+    },
+    {
+      "id": "arena_633_int",
+      "code": "633_int",
+      "rawCode": "633",
+      "name": "Arena 633_int",
+      "category": "classic",
+      "path": "levels/arena_633_int.iff",
+      "shard": "0O",
+      "size": 65889934
+    },
+    {
+      "id": "arena_634_int",
+      "code": "634_int",
+      "rawCode": "634",
+      "name": "Arena 634_int",
+      "category": "classic",
+      "path": "levels/arena_634_int.iff",
+      "shard": "0O",
+      "size": 14621969
+    },
+    {
+      "id": "arena_635_int",
+      "code": "635_int",
+      "rawCode": "635",
+      "name": "Arena 635_int",
+      "category": "classic",
+      "path": "levels/arena_635_int.iff",
+      "shard": "0O",
+      "size": 40312308
+    },
+    {
+      "id": "arena_636_int",
+      "code": "636_int",
+      "rawCode": "636",
+      "name": "Arena 636_int",
+      "category": "classic",
+      "path": "levels/arena_636_int.iff",
+      "shard": "0O",
+      "size": 32596120
+    },
+    {
+      "id": "arena_637_int",
+      "code": "637_int",
+      "rawCode": "637",
+      "name": "Arena 637_int",
+      "category": "classic",
+      "path": "levels/arena_637_int.iff",
+      "shard": "0O",
+      "size": 14640241
+    },
+    {
+      "id": "arena_638_int",
+      "code": "638_int",
+      "rawCode": "638",
+      "name": "Arena 638_int",
+      "category": "classic",
+      "path": "levels/arena_638_int.iff",
+      "shard": "0O",
+      "size": 54937872
+    },
+    {
+      "id": "arena_639_int",
+      "code": "639_int",
+      "rawCode": "639",
+      "name": "Arena 639_int",
+      "category": "classic",
+      "path": "levels/arena_639_int.iff",
+      "shard": "0O",
+      "size": 48349855
+    },
+    {
+      "id": "arena_641_int",
+      "code": "641_int",
+      "rawCode": "641",
+      "name": "Arena 641_int",
+      "category": "classic",
+      "path": "levels/arena_641_int.iff",
+      "shard": "0O",
+      "size": 48888209
+    },
+    {
+      "id": "arena_642_int",
+      "code": "642_int",
+      "rawCode": "642",
+      "name": "Arena 642_int",
+      "category": "classic",
+      "path": "levels/arena_642_int.iff",
+      "shard": "0O",
+      "size": 36448991
+    },
+    {
+      "id": "arena_644_int",
+      "code": "644_int",
+      "rawCode": "644",
+      "name": "Arena 644_int",
+      "category": "classic",
+      "path": "levels/arena_644_int.iff",
+      "shard": "0O",
+      "size": 65983010
+    },
+    {
+      "id": "arena_646_int",
+      "code": "646_int",
+      "rawCode": "646",
+      "name": "Arena 646_int",
+      "category": "classic",
+      "path": "levels/arena_646_int.iff",
+      "shard": "0O",
+      "size": 44467519
+    },
+    {
+      "id": "arena_647_int",
+      "code": "647_int",
+      "rawCode": "647",
+      "name": "Arena 647_int",
+      "category": "classic",
+      "path": "levels/arena_647_int.iff",
+      "shard": "0O",
+      "size": 32045919
+    },
+    {
+      "id": "arena_648_int",
+      "code": "648_int",
+      "rawCode": "648",
+      "name": "Arena 648_int",
+      "category": "classic",
+      "path": "levels/arena_648_int.iff",
+      "shard": "0O",
+      "size": 50168275
+    },
+    {
+      "id": "arena_649_int",
+      "code": "649_int",
+      "rawCode": "649",
+      "name": "Arena 649_int",
+      "category": "classic",
+      "path": "levels/arena_649_int.iff",
+      "shard": "0O",
+      "size": 54809122
+    },
+    {
+      "id": "arena_701_int",
+      "code": "701_int",
+      "rawCode": "701",
+      "name": "Arena 701_int",
+      "category": "classic",
+      "path": "levels/arena_701_int.iff",
+      "shard": "0O",
+      "size": 18306063
+    },
+    {
+      "id": "arena_800_int",
+      "code": "800_int",
+      "rawCode": "800",
+      "name": "Arena 800_int",
+      "category": "classic",
+      "path": "levels/arena_800_int.iff",
+      "shard": "0O",
+      "size": 16191267
+    },
+    {
+      "id": "arena_852_int",
+      "code": "852_int",
+      "rawCode": "852",
+      "name": "Arena 852_int",
+      "category": "classic",
+      "path": "levels/arena_852_int.iff",
+      "shard": "0O",
+      "size": 19474237
+    },
+    {
+      "id": "arena_853_int",
+      "code": "853_int",
+      "rawCode": "853",
+      "name": "Arena 853_int",
+      "category": "classic",
+      "path": "levels/arena_853_int.iff",
+      "shard": "0O",
+      "size": 46634200
+    },
+    {
+      "id": "arena_854_int",
+      "code": "854_int",
+      "rawCode": "854",
+      "name": "Arena 854_int",
+      "category": "classic",
+      "path": "levels/arena_854_int.iff",
+      "shard": "0O",
+      "size": 47146426
+    },
+    {
+      "id": "arena_855_int",
+      "code": "855_int",
+      "rawCode": "855",
+      "name": "Arena 855_int",
+      "category": "classic",
+      "path": "levels/arena_855_int.iff",
+      "shard": "0O",
+      "size": 43504452
+    },
+    {
+      "id": "arena_856_int",
+      "code": "856_int",
+      "rawCode": "856",
+      "name": "Arena 856_int",
+      "category": "classic",
+      "path": "levels/arena_856_int.iff",
+      "shard": "0O",
+      "size": 57132091
+    },
+    {
+      "id": "arena_857_int",
+      "code": "857_int",
+      "rawCode": "857",
+      "name": "Arena 857_int",
+      "category": "classic",
+      "path": "levels/arena_857_int.iff",
+      "shard": "0O",
+      "size": 47652105
+    },
+    {
+      "id": "arena_858_int",
+      "code": "858_int",
+      "rawCode": "858",
+      "name": "Arena 858_int",
+      "category": "classic",
+      "path": "levels/arena_858_int.iff",
+      "shard": "0O",
+      "size": 21956250
+    },
+    {
+      "id": "arena_859_int",
+      "code": "859_int",
+      "rawCode": "859",
+      "name": "Arena 859_int",
+      "category": "classic",
+      "path": "levels/arena_859_int.iff",
+      "shard": "0O",
+      "size": 33941088
+    },
+    {
+      "id": "arena_860_int",
+      "code": "860_int",
+      "rawCode": "860",
+      "name": "Arena 860_int",
+      "category": "classic",
+      "path": "levels/arena_860_int.iff",
+      "shard": "0O",
+      "size": 41756591
+    },
+    {
+      "id": "arena_861_int",
+      "code": "861_int",
+      "rawCode": "861",
+      "name": "Arena 861_int",
+      "category": "classic",
+      "path": "levels/arena_861_int.iff",
+      "shard": "0O",
+      "size": 35438826
+    },
+    {
+      "id": "arena_906_int",
+      "code": "906_int",
+      "rawCode": "906",
+      "name": "Arena 906_int",
+      "category": "classic",
+      "path": "levels/arena_906_int.iff",
+      "shard": "0O",
+      "size": 47485146
+    },
+    {
+      "id": "arena_906_int_navmesh",
+      "code": "906_int_navmesh",
+      "rawCode": "906_navmesh",
+      "name": "Arena 906_int_navmesh",
+      "category": "classic",
+      "path": "levels/arena_906_int_navmesh.iff",
+      "shard": "0O",
+      "size": 24509
+    },
+    {
+      "id": "arena_906_int_tilecache",
+      "code": "906_int_tilecache",
+      "rawCode": "906_tilecache",
+      "name": "Arena 906_int_tilecache",
+      "category": "classic",
+      "path": "levels/arena_906_int_tilecache.iff",
+      "shard": "0O",
+      "size": 26512
+    },
+    {
+      "id": "arena_924_int",
+      "code": "924_int",
+      "rawCode": "924",
+      "name": "Arena 924_int",
+      "category": "classic",
+      "path": "levels/arena_924_int.iff",
+      "shard": "0O",
+      "size": 55480378
+    },
+    {
+      "id": "arena_aaugym_int",
+      "code": "aaugym_int",
+      "rawCode": "aaugym",
+      "name": "Arena aaugym_int",
+      "category": "classic",
+      "path": "levels/arena_aaugym_int.iff",
+      "shard": "0O",
+      "size": 10497517
+    },
+    {
+      "id": "arena_allstarteamup_lobbyint",
+      "code": "allstarteamup_lobbyint",
+      "rawCode": "allstarteamup_lobbyint",
+      "name": "Arena allstarteamup_lobbyint",
+      "category": "classic",
+      "path": "levels/arena_allstarteamup_lobbyint.iff",
+      "shard": "0O",
+      "size": 7229079
+    },
+    {
+      "id": "arena_anteup_int",
+      "code": "anteup_int",
+      "rawCode": "anteup",
+      "name": "Arena anteup_int",
+      "category": "classic",
+      "path": "levels/arena_anteup_int.iff",
+      "shard": "0O",
+      "size": 6461441
+    },
+    {
+      "id": "arena_anteup_int_navmesh",
+      "code": "anteup_int_navmesh",
+      "rawCode": "anteup_navmesh",
+      "name": "Arena anteup_int_navmesh",
+      "category": "classic",
+      "path": "levels/arena_anteup_int_navmesh.iff",
+      "shard": "0O",
+      "size": 19876
+    },
+    {
+      "id": "arena_anteup_int_tilecache",
+      "code": "anteup_int_tilecache",
+      "rawCode": "anteup_tilecache",
+      "name": "Arena anteup_int_tilecache",
+      "category": "classic",
+      "path": "levels/arena_anteup_int_tilecache.iff",
+      "shard": "0O",
+      "size": 29071
+    },
+    {
+      "id": "arena_blacktop_ext",
+      "code": "blacktop_ext",
+      "rawCode": "blacktop",
+      "name": "Arena blacktop_ext",
+      "category": "street",
+      "path": "levels/arena_blacktop_ext.iff",
+      "shard": "0O",
+      "size": 147558233
+    },
+    {
+      "id": "arena_brickleyfacility_int",
+      "code": "brickleyfacility_int",
+      "rawCode": "brickleyfacility",
+      "name": "Arena brickleyfacility_int",
+      "category": "classic",
+      "path": "levels/arena_brickleyfacility_int.iff",
+      "shard": "0O",
+      "size": 12624447
+    },
+    {
+      "id": "arena_clippers2023_int",
+      "code": "clippers2023_int",
+      "rawCode": "clippers2023",
+      "name": "Arena clippers2023_int",
+      "category": "classic",
+      "path": "levels/arena_clippers2023_int.iff",
+      "shard": "0O",
+      "size": 52857080
+    },
+    {
+      "id": "arena_clutchtime_int",
+      "code": "clutchtime_int",
+      "rawCode": "clutchtime",
+      "name": "Arena clutchtime_int",
+      "category": "classic",
+      "path": "levels/arena_clutchtime_int.iff",
+      "shard": "0O",
+      "size": 12952646
+    },
+    {
+      "id": "arena_clutchtimeintro_int",
+      "code": "clutchtimeintro_int",
+      "rawCode": "clutchtimeintro",
+      "name": "Arena clutchtimeintro_int",
+      "category": "classic",
+      "path": "levels/arena_clutchtimeintro_int.iff",
+      "shard": "0O",
+      "size": 12974223
+    },
+    {
+      "id": "arena_diongym_int",
+      "code": "diongym_int",
+      "rawCode": "diongym",
+      "name": "Arena diongym_int",
+      "category": "classic",
+      "path": "levels/arena_diongym_int.iff",
+      "shard": "0O",
+      "size": 16270045
+    },
+    {
+      "id": "arena_era00s_int",
+      "code": "era00s_int",
+      "rawCode": "era00s",
+      "name": "Arena era00s_int",
+      "category": "classic",
+      "path": "levels/arena_era00s_int.iff",
+      "shard": "0O",
+      "size": 46696701
+    },
+    {
+      "id": "arena_era80s_int",
+      "code": "era80s_int",
+      "rawCode": "era80s",
+      "name": "Arena era80s_int",
+      "category": "classic",
+      "path": "levels/arena_era80s_int.iff",
+      "shard": "0O",
+      "size": 19462916
+    },
+    {
+      "id": "arena_era90s_int",
+      "code": "era90s_int",
+      "rawCode": "era90s",
+      "name": "Arena era90s_int",
+      "category": "classic",
+      "path": "levels/arena_era90s_int.iff",
+      "shard": "0O",
+      "size": 53199740
+    },
+    {
+      "id": "arena_erachallenge_int",
+      "code": "erachallenge_int",
+      "rawCode": "erachallenge",
+      "name": "Arena erachallenge_int",
+      "category": "classic",
+      "path": "levels/arena_erachallenge_int.iff",
+      "shard": "0O",
+      "size": 9603
+    },
+    {
+      "id": "arena_fiba_int",
+      "code": "fiba_int",
+      "rawCode": "fiba",
+      "name": "Arena fiba_int",
+      "category": "classic",
+      "path": "levels/arena_fiba_int.iff",
+      "shard": "0O",
+      "size": 18237439
+    },
+    {
+      "id": "arena_gleaguegeneric_int",
+      "code": "gleaguegeneric_int",
+      "rawCode": "gleaguegeneric",
+      "name": "Arena gleaguegeneric_int",
+      "category": "classic",
+      "path": "levels/arena_gleaguegeneric_int.iff",
+      "shard": "0O",
+      "size": 25955614
+    },
+    {
+      "id": "arena_gleaguemultipurpose_int",
+      "code": "gleaguemultipurpose_int",
+      "rawCode": "gleaguemultipurpose",
+      "name": "Arena gleaguemultipurpose_int",
+      "category": "classic",
+      "path": "levels/arena_gleaguemultipurpose_int.iff",
+      "shard": "0O",
+      "size": 24169279
+    },
+    {
+      "id": "arena_gleaguewintershowcase_int",
+      "code": "gleaguewintershowcase_int",
+      "rawCode": "gleaguewintershowcase",
+      "name": "Arena gleaguewintershowcase_int",
+      "category": "classic",
+      "path": "levels/arena_gleaguewintershowcase_int.iff",
+      "shard": "0O",
+      "size": 7953095
+    },
+    {
+      "id": "arena_hsgym_int",
+      "code": "hsgym_int",
+      "rawCode": "hsgym",
+      "name": "Arena hsgym_int",
+      "category": "classic",
+      "path": "levels/arena_hsgym_int.iff",
+      "shard": "0O",
+      "size": 7163580
+    },
+    {
+      "id": "arena_inseasontournament_int",
+      "code": "inseasontournament_int",
+      "rawCode": "inseasontournament",
+      "name": "Arena inseasontournament_int",
+      "category": "classic",
+      "path": "levels/arena_inseasontournament_int.iff",
+      "shard": "0O",
+      "size": 34919718
+    },
+    {
+      "id": "arena_matchmaking_lobbyint",
+      "code": "matchmaking_lobbyint",
+      "rawCode": "matchmaking_lobbyint",
+      "name": "Arena matchmaking_lobbyint",
+      "category": "classic",
+      "path": "levels/arena_matchmaking_lobbyint.iff",
+      "shard": "0O",
+      "size": 4661477
+    },
+    {
+      "id": "arena_matchmaking_lobbyint_navmesh",
+      "code": "matchmaking_lobbyint_navmesh",
+      "rawCode": "matchmaking_lobbyint_navmesh",
+      "name": "Arena matchmaking_lobbyint_navmesh",
+      "category": "classic",
+      "path": "levels/arena_matchmaking_lobbyint_navmesh.iff",
+      "shard": "0O",
+      "size": 2406
+    },
+    {
+      "id": "arena_matchmaking_lobbyint_tilecache",
+      "code": "matchmaking_lobbyint_tilecache",
+      "rawCode": "matchmaking_lobbyint_tilecache",
+      "name": "Arena matchmaking_lobbyint_tilecache",
+      "category": "classic",
+      "path": "levels/arena_matchmaking_lobbyint_tilecache.iff",
+      "shard": "0O",
+      "size": 3358
+    },
+    {
+      "id": "arena_matchmakinga_int",
+      "code": "matchmakinga_int",
+      "rawCode": "matchmakinga",
+      "name": "Arena matchmakinga_int",
+      "category": "classic",
+      "path": "levels/arena_matchmakinga_int.iff",
+      "shard": "0O",
+      "size": 9451594
+    },
+    {
+      "id": "arena_matchmakingb_int",
+      "code": "matchmakingb_int",
+      "rawCode": "matchmakingb",
+      "name": "Arena matchmakingb_int",
+      "category": "classic",
+      "path": "levels/arena_matchmakingb_int.iff",
+      "shard": "0O",
+      "size": 9474966
+    },
+    {
+      "id": "arena_matchup_lobbyint",
+      "code": "matchup_lobbyint",
+      "rawCode": "matchup_lobbyint",
+      "name": "Arena matchup_lobbyint",
+      "category": "classic",
+      "path": "levels/arena_matchup_lobbyint.iff",
+      "shard": "0O",
+      "size": 8664546
+    },
+    {
+      "id": "arena_matchup_lobbyint_navmesh",
+      "code": "matchup_lobbyint_navmesh",
+      "rawCode": "matchup_lobbyint_navmesh",
+      "name": "Arena matchup_lobbyint_navmesh",
+      "category": "classic",
+      "path": "levels/arena_matchup_lobbyint_navmesh.iff",
+      "shard": "0O",
+      "size": 1981
+    },
+    {
+      "id": "arena_matchup_lobbyint_tilecache",
+      "code": "matchup_lobbyint_tilecache",
+      "rawCode": "matchup_lobbyint_tilecache",
+      "name": "Arena matchup_lobbyint_tilecache",
+      "category": "classic",
+      "path": "levels/arena_matchup_lobbyint_tilecache.iff",
+      "shard": "0O",
+      "size": 2995
+    },
+    {
+      "id": "arena_multileague_int",
+      "code": "multileague_int",
+      "rawCode": "multileague",
+      "name": "Arena multileague_int",
+      "category": "classic",
+      "path": "levels/arena_multileague_int.iff",
+      "shard": "0O",
+      "size": 17896892
+    },
+    {
+      "id": "arena_mycareerbuilder_int",
+      "code": "mycareerbuilder_int",
+      "rawCode": "mycareerbuilder",
+      "name": "Arena mycareerbuilder_int",
+      "category": "classic",
+      "path": "levels/arena_mycareerbuilder_int.iff",
+      "shard": "0O",
+      "size": 17727396
+    },
+    {
+      "id": "arena_mycourt_int",
+      "code": "mycourt_int",
+      "rawCode": "mycourt",
+      "name": "Arena mycourt_int",
+      "category": "classic",
+      "path": "levels/arena_mycourt_int.iff",
+      "shard": "0O",
+      "size": 15303077
+    },
+    {
+      "id": "arena_mycourt_int_navmesh",
+      "code": "mycourt_int_navmesh",
+      "rawCode": "mycourt_navmesh",
+      "name": "Arena mycourt_int_navmesh",
+      "category": "classic",
+      "path": "levels/arena_mycourt_int_navmesh.iff",
+      "shard": "0O",
+      "size": 4859
+    },
+    {
+      "id": "arena_mycourt_int_tilecache",
+      "code": "mycourt_int_tilecache",
+      "rawCode": "mycourt_tilecache",
+      "name": "Arena mycourt_int_tilecache",
+      "category": "classic",
+      "path": "levels/arena_mycourt_int_tilecache.iff",
+      "shard": "0O",
+      "size": 5762
+    },
+    {
+      "id": "arena_mytdome_int",
+      "code": "mytdome_int",
+      "rawCode": "mytdome",
+      "name": "Arena mytdome_int",
+      "category": "classic",
+      "path": "levels/arena_mytdome_int.iff",
+      "shard": "0O",
+      "size": 20645376
+    },
+    {
+      "id": "arena_myteam_int",
+      "code": "myteam_int",
+      "rawCode": "myteam",
+      "name": "Arena myteam_int",
+      "category": "classic",
+      "path": "levels/arena_myteam_int.iff",
+      "shard": "0O",
+      "size": 16888842
+    },
+    {
+      "id": "arena_practicefacility2k25_int",
+      "code": "practicefacility2k25_int",
+      "rawCode": "practicefacility2k25",
+      "name": "Arena practicefacility2k25_int",
+      "category": "classic",
+      "path": "levels/arena_practicefacility2k25_int.iff",
+      "shard": "0O",
+      "size": 24888202
+    },
+    {
+      "id": "arena_practicefacility_int",
+      "code": "practicefacility_int",
+      "rawCode": "practicefacility",
+      "name": "Arena practicefacility_int",
+      "category": "classic",
+      "path": "levels/arena_practicefacility_int.iff",
+      "shard": "0O",
+      "size": 66238059
+    },
+    {
+      "id": "arena_provinggrounds_lobbyint",
+      "code": "provinggrounds_lobbyint",
+      "rawCode": "provinggrounds_lobbyint",
+      "name": "Arena provinggrounds_lobbyint",
+      "category": "classic",
+      "path": "levels/arena_provinggrounds_lobbyint.iff",
+      "shard": "0O",
+      "size": 13437168
+    },
+    {
+      "id": "arena_provinggrounds_lobbyint_navmesh",
+      "code": "provinggrounds_lobbyint_navmesh",
+      "rawCode": "provinggrounds_lobbyint_navmesh",
+      "name": "Arena provinggrounds_lobbyint_navmesh",
+      "category": "classic",
+      "path": "levels/arena_provinggrounds_lobbyint_navmesh.iff",
+      "shard": "0O",
+      "size": 1553
+    },
+    {
+      "id": "arena_provinggrounds_lobbyint_tilecache",
+      "code": "provinggrounds_lobbyint_tilecache",
+      "rawCode": "provinggrounds_lobbyint_tilecache",
+      "name": "Arena provinggrounds_lobbyint_tilecache",
+      "category": "classic",
+      "path": "levels/arena_provinggrounds_lobbyint_tilecache.iff",
+      "shard": "0O",
+      "size": 1868
+    },
+    {
+      "id": "arena_provinggroundsa_int",
+      "code": "provinggroundsa_int",
+      "rawCode": "provinggroundsa",
+      "name": "Arena provinggroundsa_int",
+      "category": "classic",
+      "path": "levels/arena_provinggroundsa_int.iff",
+      "shard": "0O",
+      "size": 9672908
+    },
+    {
+      "id": "arena_provinggroundsb_int",
+      "code": "provinggroundsb_int",
+      "rawCode": "provinggroundsb",
+      "name": "Arena provinggroundsb_int",
+      "category": "classic",
+      "path": "levels/arena_provinggroundsb_int.iff",
+      "shard": "0O",
+      "size": 9654515
+    },
+    {
+      "id": "arena_scrimmage3v3_int",
+      "code": "scrimmage3v3_int",
+      "rawCode": "scrimmage3v3",
+      "name": "Arena scrimmage3v3_int",
+      "category": "classic",
+      "path": "levels/arena_scrimmage3v3_int.iff",
+      "shard": "0O",
+      "size": 15303366
+    },
+    {
+      "id": "arena_scrimmage5v5_int",
+      "code": "scrimmage5v5_int",
+      "rawCode": "scrimmage5v5",
+      "name": "Arena scrimmage5v5_int",
+      "category": "classic",
+      "path": "levels/arena_scrimmage5v5_int.iff",
+      "shard": "0O",
+      "size": 16558718
+    },
+    {
+      "id": "arena_scrimmagehalf_int",
+      "code": "scrimmagehalf_int",
+      "rawCode": "scrimmagehalf",
+      "name": "Arena scrimmagehalf_int",
+      "category": "classic",
+      "path": "levels/arena_scrimmagehalf_int.iff",
+      "shard": "0O",
+      "size": 14407346
+    },
+    {
+      "id": "arena_shooterfacility_int",
+      "code": "shooterfacility_int",
+      "rawCode": "shooterfacility",
+      "name": "Arena shooterfacility_int",
+      "category": "classic",
+      "path": "levels/arena_shooterfacility_int.iff",
+      "shard": "0O",
+      "size": 12597710
+    },
+    {
+      "id": "arena_statechampionship_int",
+      "code": "statechampionship_int",
+      "rawCode": "statechampionship",
+      "name": "Arena statechampionship_int",
+      "category": "classic",
+      "path": "levels/arena_statechampionship_int.iff",
+      "shard": "0O",
+      "size": 30587609
+    },
+    {
+      "id": "arena_triplethreat_int",
+      "code": "triplethreat_int",
+      "rawCode": "triplethreat",
+      "name": "Arena triplethreat_int",
+      "category": "classic",
+      "path": "levels/arena_triplethreat_int.iff",
+      "shard": "0O",
+      "size": 13192641
+    },
+    {
+      "id": "arena_wnbageneric_int",
+      "code": "wnbageneric_int",
+      "rawCode": "wnbageneric",
+      "name": "Arena wnbageneric_int",
+      "category": "classic",
+      "path": "levels/arena_wnbageneric_int.iff",
+      "shard": "0O",
+      "size": 26123554
+    },
+    {
+      "id": "arena_wnbagym_int",
+      "code": "wnbagym_int",
+      "rawCode": "wnbagym",
+      "name": "Arena wnbagym_int",
+      "category": "classic",
+      "path": "levels/arena_wnbagym_int.iff",
+      "shard": "0O",
+      "size": 5819078
+    },
+    {
+      "id": "arena_000_int",
+      "code": "000_int",
+      "rawCode": "000",
+      "name": "Philadelphia 76ers Arena",
+      "category": "nba",
+      "path": "levels/arena_000_int.iff",
+      "shard": "0W",
+      "size": 57968221
+    },
+    {
+      "id": "arena_001_int",
+      "code": "001_int",
+      "rawCode": "001",
+      "name": "Boston Celtics Arena",
+      "category": "nba",
+      "path": "levels/arena_001_int.iff",
+      "shard": "0X",
+      "size": 46968443
+    },
+    {
+      "id": "arena_003_int",
+      "code": "003_int",
+      "rawCode": "003",
+      "name": "Chicago Bulls Arena",
+      "category": "nba",
+      "path": "levels/arena_003_int.iff",
+      "shard": "0Y",
+      "size": 49533351
+    },
+    {
+      "id": "arena_004_int",
+      "code": "004_int",
+      "rawCode": "004",
+      "name": "Cleveland Cavaliers Arena",
+      "category": "nba",
+      "path": "levels/arena_004_int.iff",
+      "shard": "0Z",
+      "size": 60074962
+    },
+    {
+      "id": "arena_005_int",
+      "code": "005_int",
+      "rawCode": "005",
+      "name": "Dallas Mavericks Arena",
+      "category": "nba",
+      "path": "levels/arena_005_int.iff",
+      "shard": "1A",
+      "size": 58428690
+    },
+    {
+      "id": "arena_006_int",
+      "code": "006_int",
+      "rawCode": "006",
+      "name": "Denver Nuggets Arena",
+      "category": "nba",
+      "path": "levels/arena_006_int.iff",
+      "shard": "1B",
+      "size": 42532415
+    },
+    {
+      "id": "arena_008_int",
+      "code": "008_int",
+      "rawCode": "008",
+      "name": "Detroit Pistons Arena",
+      "category": "nba",
+      "path": "levels/arena_008_int.iff",
+      "shard": "1C",
+      "size": 39285380
+    },
+    {
+      "id": "arena_009_int",
+      "code": "009_int",
+      "rawCode": "009",
+      "name": "Golden State Warriors Arena",
+      "category": "nba",
+      "path": "levels/arena_009_int.iff",
+      "shard": "1D",
+      "size": 48367160
+    },
+    {
+      "id": "arena_010_int",
+      "code": "010_int",
+      "rawCode": "010",
+      "name": "Houston Rockets Arena",
+      "category": "nba",
+      "path": "levels/arena_010_int.iff",
+      "shard": "1E",
+      "size": 41650588
+    },
+    {
+      "id": "arena_031_int",
+      "code": "031_int",
+      "rawCode": "031",
+      "name": "Atlanta Hawks Arena",
+      "category": "nba",
+      "path": "levels/arena_031_int.iff",
+      "shard": "1F",
+      "size": 39590599
+    },
+    {
+      "id": "arena_012_int",
+      "code": "012_int",
+      "rawCode": "012",
+      "name": "Arena 012_int",
+      "category": "nba",
+      "path": "levels/arena_012_int.iff",
+      "shard": "1G",
+      "size": 42367982
+    },
+    {
+      "id": "arena_013_int",
+      "code": "013_int",
+      "rawCode": "013",
+      "name": "Memphis Grizzlies Arena",
+      "category": "nba",
+      "path": "levels/arena_013_int.iff",
+      "shard": "1H",
+      "size": 47142068
+    },
+    {
+      "id": "arena_014_int",
+      "code": "014_int",
+      "rawCode": "014",
+      "name": "Miami Heat Arena",
+      "category": "nba",
+      "path": "levels/arena_014_int.iff",
+      "shard": "1I",
+      "size": 67744210
+    },
+    {
+      "id": "arena_015_int",
+      "code": "015_int",
+      "rawCode": "015",
+      "name": "Los Angeles Lakers Arena",
+      "category": "nba",
+      "path": "levels/arena_015_int.iff",
+      "shard": "1J",
+      "size": 58479941
+    },
+    {
+      "id": "arena_016_int",
+      "code": "016_int",
+      "rawCode": "016",
+      "name": "Minnesota Timberwolves Arena",
+      "category": "nba",
+      "path": "levels/arena_016_int.iff",
+      "shard": "1K",
+      "size": 44161625
+    },
+    {
+      "id": "arena_017_int",
+      "code": "017_int",
+      "rawCode": "017",
+      "name": "Brooklyn Nets Arena",
+      "category": "nba",
+      "path": "levels/arena_017_int.iff",
+      "shard": "1L",
+      "size": 56202815
+    },
+    {
+      "id": "arena_018_int",
+      "code": "018_int",
+      "rawCode": "018",
+      "name": "New York Knicks Arena",
+      "category": "nba",
+      "path": "levels/arena_018_int.iff",
+      "shard": "1M",
+      "size": 40127551
+    },
+    {
+      "id": "arena_019_int",
+      "code": "019_int",
+      "rawCode": "019",
+      "name": "Orlando Magic Arena",
+      "category": "nba",
+      "path": "levels/arena_019_int.iff",
+      "shard": "1N",
+      "size": 55464523
+    },
+    {
+      "id": "arena_020_int",
+      "code": "020_int",
+      "rawCode": "020",
+      "name": "New Orleans Pelicans Arena",
+      "category": "nba",
+      "path": "levels/arena_020_int.iff",
+      "shard": "1O",
+      "size": 40519870
+    },
+    {
+      "id": "arena_011_int",
+      "code": "011_int",
+      "rawCode": "011",
+      "name": "Indiana Pacers Arena",
+      "category": "nba",
+      "path": "levels/arena_011_int.iff",
+      "shard": "1P",
+      "size": 51828215
+    },
+    {
+      "id": "arena_021_int",
+      "code": "021_int",
+      "rawCode": "021",
+      "name": "Phoenix Suns Arena",
+      "category": "nba",
+      "path": "levels/arena_021_int.iff",
+      "shard": "1Q",
+      "size": 49761298
+    },
+    {
+      "id": "arena_022_int",
+      "code": "022_int",
+      "rawCode": "022",
+      "name": "Portland Trail Blazers Arena",
+      "category": "nba",
+      "path": "levels/arena_022_int.iff",
+      "shard": "1R",
+      "size": 56551629
+    },
+    {
+      "id": "arena_023_int",
+      "code": "023_int",
+      "rawCode": "023",
+      "name": "Sacramento Kings Arena",
+      "category": "nba",
+      "path": "levels/arena_023_int.iff",
+      "shard": "1S",
+      "size": 52167245
+    },
+    {
+      "id": "arena_025_int",
+      "code": "025_int",
+      "rawCode": "025",
+      "name": "Oklahoma City Thunder Arena",
+      "category": "nba",
+      "path": "levels/arena_025_int.iff",
+      "shard": "1T",
+      "size": 38197992
+    },
+    {
+      "id": "arena_026_int",
+      "code": "026_int",
+      "rawCode": "026",
+      "name": "Utah Jazz Arena",
+      "category": "nba",
+      "path": "levels/arena_026_int.iff",
+      "shard": "1U",
+      "size": 45201554
+    },
+    {
+      "id": "arena_024_int",
+      "code": "024_int",
+      "rawCode": "024",
+      "name": "San Antonio Spurs Arena",
+      "category": "nba",
+      "path": "levels/arena_024_int.iff",
+      "shard": "1V",
+      "size": 51219973
+    },
+    {
+      "id": "arena_027_int",
+      "code": "027_int",
+      "rawCode": "027",
+      "name": "Washington Wizards Arena",
+      "category": "nba",
+      "path": "levels/arena_027_int.iff",
+      "shard": "1W",
+      "size": 48783099
+    },
+    {
+      "id": "arena_028_int",
+      "code": "028_int",
+      "rawCode": "028",
+      "name": "Charlotte Hornets Arena",
+      "category": "nba",
+      "path": "levels/arena_028_int.iff",
+      "shard": "1X",
+      "size": 52739651
+    },
+    {
+      "id": "arena_002_int",
+      "code": "002_int",
+      "rawCode": "002",
+      "name": "LA Clippers Arena",
+      "category": "nba",
+      "path": "levels/arena_002_int.iff",
+      "shard": "1Z",
+      "size": 62100730
+    }
+  ],
+  "floors": [
+    {
+      "id": "floor_700_int",
+      "code": "700_int",
+      "rawCode": "700",
+      "name": "Floor 700_int Floor",
+      "path": "levels/arena_700_int_floor.iff",
+      "shard": "0B",
+      "size": 161095
+    },
+    {
+      "id": "floor_029_int",
+      "code": "029_int",
+      "rawCode": "029",
+      "name": "Toronto Raptors Floor",
+      "path": "levels/arena_029_int_floor.iff",
+      "shard": "0G",
+      "size": 165464
+    },
+    {
+      "id": "floor_729_int",
+      "code": "729_int",
+      "rawCode": "729",
+      "name": "Floor 729_int Floor",
+      "path": "levels/arena_729_int_floor.iff",
+      "shard": "0G",
+      "size": 108677
+    },
+    {
+      "id": "floor_032_int",
+      "code": "032_int",
+      "rawCode": "032",
+      "name": "NBA Special Arena Floor",
+      "path": "levels/arena_032_int_floor.iff",
+      "shard": "0O",
+      "size": 165505
+    },
+    {
+      "id": "floor_302_int",
+      "code": "302_int",
+      "rawCode": "302",
+      "name": "Floor 302_int Floor",
+      "path": "levels/arena_302_int_floor.iff",
+      "shard": "0O",
+      "size": 180154
+    },
+    {
+      "id": "floor_303_int",
+      "code": "303_int",
+      "rawCode": "303",
+      "name": "Floor 303_int Floor",
+      "path": "levels/arena_303_int_floor.iff",
+      "shard": "0O",
+      "size": 188227
+    },
+    {
+      "id": "floor_304_int",
+      "code": "304_int",
+      "rawCode": "304",
+      "name": "Floor 304_int Floor",
+      "path": "levels/arena_304_int_floor.iff",
+      "shard": "0O",
+      "size": 142650
+    },
+    {
+      "id": "floor_305_int",
+      "code": "305_int",
+      "rawCode": "305",
+      "name": "Floor 305_int Floor",
+      "path": "levels/arena_305_int_floor.iff",
+      "shard": "0O",
+      "size": 170890
+    },
+    {
+      "id": "floor_308_int",
+      "code": "308_int",
+      "rawCode": "308",
+      "name": "Floor 308_int Floor",
+      "path": "levels/arena_308_int_floor.iff",
+      "shard": "0O",
+      "size": 194065
+    },
+    {
+      "id": "floor_315_int",
+      "code": "315_int",
+      "rawCode": "315",
+      "name": "Floor 315_int Floor",
+      "path": "levels/arena_315_int_floor.iff",
+      "shard": "0O",
+      "size": 157541
+    },
+    {
+      "id": "floor_551_int",
+      "code": "551_int",
+      "rawCode": "551",
+      "name": "Floor 551_int Floor",
+      "path": "levels/arena_551_int_floor.iff",
+      "shard": "0O",
+      "size": 139286
+    },
+    {
+      "id": "floor_552_int",
+      "code": "552_int",
+      "rawCode": "552",
+      "name": "Floor 552_int Floor",
+      "path": "levels/arena_552_int_floor.iff",
+      "shard": "0O",
+      "size": 133599
+    },
+    {
+      "id": "floor_553_int",
+      "code": "553_int",
+      "rawCode": "553",
+      "name": "Floor 553_int Floor",
+      "path": "levels/arena_553_int_floor.iff",
+      "shard": "0O",
+      "size": 159825
+    },
+    {
+      "id": "floor_554_int",
+      "code": "554_int",
+      "rawCode": "554",
+      "name": "Floor 554_int Floor",
+      "path": "levels/arena_554_int_floor.iff",
+      "shard": "0O",
+      "size": 137774
+    },
+    {
+      "id": "floor_555_int",
+      "code": "555_int",
+      "rawCode": "555",
+      "name": "Floor 555_int Floor",
+      "path": "levels/arena_555_int_floor.iff",
+      "shard": "0O",
+      "size": 139506
+    },
+    {
+      "id": "floor_556_int",
+      "code": "556_int",
+      "rawCode": "556",
+      "name": "Floor 556_int Floor",
+      "path": "levels/arena_556_int_floor.iff",
+      "shard": "0O",
+      "size": 165905
+    },
+    {
+      "id": "floor_557_int",
+      "code": "557_int",
+      "rawCode": "557",
+      "name": "Floor 557_int Floor",
+      "path": "levels/arena_557_int_floor.iff",
+      "shard": "0O",
+      "size": 138197
+    },
+    {
+      "id": "floor_558_int",
+      "code": "558_int",
+      "rawCode": "558",
+      "name": "Floor 558_int Floor",
+      "path": "levels/arena_558_int_floor.iff",
+      "shard": "0O",
+      "size": 164339
+    },
+    {
+      "id": "floor_559_int",
+      "code": "559_int",
+      "rawCode": "559",
+      "name": "Floor 559_int Floor",
+      "path": "levels/arena_559_int_floor.iff",
+      "shard": "0O",
+      "size": 173543
+    },
+    {
+      "id": "floor_560_int",
+      "code": "560_int",
+      "rawCode": "560",
+      "name": "Floor 560_int Floor",
+      "path": "levels/arena_560_int_floor.iff",
+      "shard": "0O",
+      "size": 140365
+    },
+    {
+      "id": "floor_562_int",
+      "code": "562_int",
+      "rawCode": "562",
+      "name": "Floor 562_int Floor",
+      "path": "levels/arena_562_int_floor.iff",
+      "shard": "0O",
+      "size": 163973
+    },
+    {
+      "id": "floor_564_int",
+      "code": "564_int",
+      "rawCode": "564",
+      "name": "Floor 564_int Floor",
+      "path": "levels/arena_564_int_floor.iff",
+      "shard": "0O",
+      "size": 167464
+    },
+    {
+      "id": "floor_570_int",
+      "code": "570_int",
+      "rawCode": "570",
+      "name": "Floor 570_int Floor",
+      "path": "levels/arena_570_int_floor.iff",
+      "shard": "0O",
+      "size": 133157
+    },
+    {
+      "id": "floor_571_int",
+      "code": "571_int",
+      "rawCode": "571",
+      "name": "Floor 571_int Floor",
+      "path": "levels/arena_571_int_floor.iff",
+      "shard": "0O",
+      "size": 133531
+    },
+    {
+      "id": "floor_574_int",
+      "code": "574_int",
+      "rawCode": "574",
+      "name": "Floor 574_int Floor",
+      "path": "levels/arena_574_int_floor.iff",
+      "shard": "0O",
+      "size": 133741
+    },
+    {
+      "id": "floor_576_int",
+      "code": "576_int",
+      "rawCode": "576",
+      "name": "Floor 576_int Floor",
+      "path": "levels/arena_576_int_floor.iff",
+      "shard": "0O",
+      "size": 181255
+    },
+    {
+      "id": "floor_578_int",
+      "code": "578_int",
+      "rawCode": "578",
+      "name": "Floor 578_int Floor",
+      "path": "levels/arena_578_int_floor.iff",
+      "shard": "0O",
+      "size": 138422
+    },
+    {
+      "id": "floor_583_int",
+      "code": "583_int",
+      "rawCode": "583",
+      "name": "Floor 583_int Floor",
+      "path": "levels/arena_583_int_floor.iff",
+      "shard": "0O",
+      "size": 140814
+    },
+    {
+      "id": "floor_586_int",
+      "code": "586_int",
+      "rawCode": "586",
+      "name": "Floor 586_int Floor",
+      "path": "levels/arena_586_int_floor.iff",
+      "shard": "0O",
+      "size": 164600
+    },
+    {
+      "id": "floor_588_int",
+      "code": "588_int",
+      "rawCode": "588",
+      "name": "Floor 588_int Floor",
+      "path": "levels/arena_588_int_floor.iff",
+      "shard": "0O",
+      "size": 166196
+    },
+    {
+      "id": "floor_589_int",
+      "code": "589_int",
+      "rawCode": "589",
+      "name": "Floor 589_int Floor",
+      "path": "levels/arena_589_int_floor.iff",
+      "shard": "0O",
+      "size": 138650
+    },
+    {
+      "id": "floor_590_int",
+      "code": "590_int",
+      "rawCode": "590",
+      "name": "Floor 590_int Floor",
+      "path": "levels/arena_590_int_floor.iff",
+      "shard": "0O",
+      "size": 185219
+    },
+    {
+      "id": "floor_591_int",
+      "code": "591_int",
+      "rawCode": "591",
+      "name": "Floor 591_int Floor",
+      "path": "levels/arena_591_int_floor.iff",
+      "shard": "0O",
+      "size": 163820
+    },
+    {
+      "id": "floor_592_int",
+      "code": "592_int",
+      "rawCode": "592",
+      "name": "Floor 592_int Floor",
+      "path": "levels/arena_592_int_floor.iff",
+      "shard": "0O",
+      "size": 173014
+    },
+    {
+      "id": "floor_593_int",
+      "code": "593_int",
+      "rawCode": "593",
+      "name": "Floor 593_int Floor",
+      "path": "levels/arena_593_int_floor.iff",
+      "shard": "0O",
+      "size": 164483
+    },
+    {
+      "id": "floor_594_int",
+      "code": "594_int",
+      "rawCode": "594",
+      "name": "Floor 594_int Floor",
+      "path": "levels/arena_594_int_floor.iff",
+      "shard": "0O",
+      "size": 159054
+    },
+    {
+      "id": "floor_595_int",
+      "code": "595_int",
+      "rawCode": "595",
+      "name": "Floor 595_int Floor",
+      "path": "levels/arena_595_int_floor.iff",
+      "shard": "0O",
+      "size": 173793
+    },
+    {
+      "id": "floor_620_int",
+      "code": "620_int",
+      "rawCode": "620",
+      "name": "Floor 620_int Floor",
+      "path": "levels/arena_620_int_floor.iff",
+      "shard": "0O",
+      "size": 188447
+    },
+    {
+      "id": "floor_621_int",
+      "code": "621_int",
+      "rawCode": "621",
+      "name": "Floor 621_int Floor",
+      "path": "levels/arena_621_int_floor.iff",
+      "shard": "0O",
+      "size": 163548
+    },
+    {
+      "id": "floor_622_int",
+      "code": "622_int",
+      "rawCode": "622",
+      "name": "Floor 622_int Floor",
+      "path": "levels/arena_622_int_floor.iff",
+      "shard": "0O",
+      "size": 163276
+    },
+    {
+      "id": "floor_623_int",
+      "code": "623_int",
+      "rawCode": "623",
+      "name": "Floor 623_int Floor",
+      "path": "levels/arena_623_int_floor.iff",
+      "shard": "0O",
+      "size": 164745
+    },
+    {
+      "id": "floor_624_int",
+      "code": "624_int",
+      "rawCode": "624",
+      "name": "Floor 624_int Floor",
+      "path": "levels/arena_624_int_floor.iff",
+      "shard": "0O",
+      "size": 165866
+    },
+    {
+      "id": "floor_625_int",
+      "code": "625_int",
+      "rawCode": "625",
+      "name": "Floor 625_int Floor",
+      "path": "levels/arena_625_int_floor.iff",
+      "shard": "0O",
+      "size": 165082
+    },
+    {
+      "id": "floor_626_int",
+      "code": "626_int",
+      "rawCode": "626",
+      "name": "Floor 626_int Floor",
+      "path": "levels/arena_626_int_floor.iff",
+      "shard": "0O",
+      "size": 165769
+    },
+    {
+      "id": "floor_627_int",
+      "code": "627_int",
+      "rawCode": "627",
+      "name": "Floor 627_int Floor",
+      "path": "levels/arena_627_int_floor.iff",
+      "shard": "0O",
+      "size": 165310
+    },
+    {
+      "id": "floor_628_int",
+      "code": "628_int",
+      "rawCode": "628",
+      "name": "Floor 628_int Floor",
+      "path": "levels/arena_628_int_floor.iff",
+      "shard": "0O",
+      "size": 170630
+    },
+    {
+      "id": "floor_629_int",
+      "code": "629_int",
+      "rawCode": "629",
+      "name": "Floor 629_int Floor",
+      "path": "levels/arena_629_int_floor.iff",
+      "shard": "0O",
+      "size": 131640
+    },
+    {
+      "id": "floor_630_int",
+      "code": "630_int",
+      "rawCode": "630",
+      "name": "Floor 630_int Floor",
+      "path": "levels/arena_630_int_floor.iff",
+      "shard": "0O",
+      "size": 167595
+    },
+    {
+      "id": "floor_631_int",
+      "code": "631_int",
+      "rawCode": "631",
+      "name": "Floor 631_int Floor",
+      "path": "levels/arena_631_int_floor.iff",
+      "shard": "0O",
+      "size": 171740
+    },
+    {
+      "id": "floor_633_int",
+      "code": "633_int",
+      "rawCode": "633",
+      "name": "Floor 633_int Floor",
+      "path": "levels/arena_633_int_floor.iff",
+      "shard": "0O",
+      "size": 159057
+    },
+    {
+      "id": "floor_634_int",
+      "code": "634_int",
+      "rawCode": "634",
+      "name": "Floor 634_int Floor",
+      "path": "levels/arena_634_int_floor.iff",
+      "shard": "0O",
+      "size": 137691
+    },
+    {
+      "id": "floor_635_int",
+      "code": "635_int",
+      "rawCode": "635",
+      "name": "Floor 635_int Floor",
+      "path": "levels/arena_635_int_floor.iff",
+      "shard": "0O",
+      "size": 164625
+    },
+    {
+      "id": "floor_636_int",
+      "code": "636_int",
+      "rawCode": "636",
+      "name": "Floor 636_int Floor",
+      "path": "levels/arena_636_int_floor.iff",
+      "shard": "0O",
+      "size": 142264
+    },
+    {
+      "id": "floor_637_int",
+      "code": "637_int",
+      "rawCode": "637",
+      "name": "Floor 637_int Floor",
+      "path": "levels/arena_637_int_floor.iff",
+      "shard": "0O",
+      "size": 169188
+    },
+    {
+      "id": "floor_638_int",
+      "code": "638_int",
+      "rawCode": "638",
+      "name": "Floor 638_int Floor",
+      "path": "levels/arena_638_int_floor.iff",
+      "shard": "0O",
+      "size": 190679
+    },
+    {
+      "id": "floor_639_int",
+      "code": "639_int",
+      "rawCode": "639",
+      "name": "Floor 639_int Floor",
+      "path": "levels/arena_639_int_floor.iff",
+      "shard": "0O",
+      "size": 168901
+    },
+    {
+      "id": "floor_641_int",
+      "code": "641_int",
+      "rawCode": "641",
+      "name": "Floor 641_int Floor",
+      "path": "levels/arena_641_int_floor.iff",
+      "shard": "0O",
+      "size": 176550
+    },
+    {
+      "id": "floor_642_int",
+      "code": "642_int",
+      "rawCode": "642",
+      "name": "Floor 642_int Floor",
+      "path": "levels/arena_642_int_floor.iff",
+      "shard": "0O",
+      "size": 172229
+    },
+    {
+      "id": "floor_644_int",
+      "code": "644_int",
+      "rawCode": "644",
+      "name": "Floor 644_int Floor",
+      "path": "levels/arena_644_int_floor.iff",
+      "shard": "0O",
+      "size": 161230
+    },
+    {
+      "id": "floor_646_int",
+      "code": "646_int",
+      "rawCode": "646",
+      "name": "Floor 646_int Floor",
+      "path": "levels/arena_646_int_floor.iff",
+      "shard": "0O",
+      "size": 168199
+    },
+    {
+      "id": "floor_647_int",
+      "code": "647_int",
+      "rawCode": "647",
+      "name": "Floor 647_int Floor",
+      "path": "levels/arena_647_int_floor.iff",
+      "shard": "0O",
+      "size": 145132
+    },
+    {
+      "id": "floor_648_int",
+      "code": "648_int",
+      "rawCode": "648",
+      "name": "Floor 648_int Floor",
+      "path": "levels/arena_648_int_floor.iff",
+      "shard": "0O",
+      "size": 189873
+    },
+    {
+      "id": "floor_649_int",
+      "code": "649_int",
+      "rawCode": "649",
+      "name": "Floor 649_int Floor",
+      "path": "levels/arena_649_int_floor.iff",
+      "shard": "0O",
+      "size": 192736
+    },
+    {
+      "id": "floor_701_int",
+      "code": "701_int",
+      "rawCode": "701",
+      "name": "Floor 701_int Floor",
+      "path": "levels/arena_701_int_floor.iff",
+      "shard": "0O",
+      "size": 156317
+    },
+    {
+      "id": "floor_800_int",
+      "code": "800_int",
+      "rawCode": "800",
+      "name": "Floor 800_int Floor",
+      "path": "levels/arena_800_int_floor.iff",
+      "shard": "0O",
+      "size": 157212
+    },
+    {
+      "id": "floor_852_int",
+      "code": "852_int",
+      "rawCode": "852",
+      "name": "Floor 852_int Floor",
+      "path": "levels/arena_852_int_floor.iff",
+      "shard": "0O",
+      "size": 161914
+    },
+    {
+      "id": "floor_853_int",
+      "code": "853_int",
+      "rawCode": "853",
+      "name": "Floor 853_int Floor",
+      "path": "levels/arena_853_int_floor.iff",
+      "shard": "0O",
+      "size": 141266
+    },
+    {
+      "id": "floor_854_int",
+      "code": "854_int",
+      "rawCode": "854",
+      "name": "Floor 854_int Floor",
+      "path": "levels/arena_854_int_floor.iff",
+      "shard": "0O",
+      "size": 189306
+    },
+    {
+      "id": "floor_855_int",
+      "code": "855_int",
+      "rawCode": "855",
+      "name": "Floor 855_int Floor",
+      "path": "levels/arena_855_int_floor.iff",
+      "shard": "0O",
+      "size": 190397
+    },
+    {
+      "id": "floor_856_int",
+      "code": "856_int",
+      "rawCode": "856",
+      "name": "Floor 856_int Floor",
+      "path": "levels/arena_856_int_floor.iff",
+      "shard": "0O",
+      "size": 179189
+    },
+    {
+      "id": "floor_857_int",
+      "code": "857_int",
+      "rawCode": "857",
+      "name": "Floor 857_int Floor",
+      "path": "levels/arena_857_int_floor.iff",
+      "shard": "0O",
+      "size": 191196
+    },
+    {
+      "id": "floor_858_int",
+      "code": "858_int",
+      "rawCode": "858",
+      "name": "Floor 858_int Floor",
+      "path": "levels/arena_858_int_floor.iff",
+      "shard": "0O",
+      "size": 166759
+    },
+    {
+      "id": "floor_859_int",
+      "code": "859_int",
+      "rawCode": "859",
+      "name": "Floor 859_int Floor",
+      "path": "levels/arena_859_int_floor.iff",
+      "shard": "0O",
+      "size": 162586
+    },
+    {
+      "id": "floor_860_int",
+      "code": "860_int",
+      "rawCode": "860",
+      "name": "Floor 860_int Floor",
+      "path": "levels/arena_860_int_floor.iff",
+      "shard": "0O",
+      "size": 191469
+    },
+    {
+      "id": "floor_861_int",
+      "code": "861_int",
+      "rawCode": "861",
+      "name": "Floor 861_int Floor",
+      "path": "levels/arena_861_int_floor.iff",
+      "shard": "0O",
+      "size": 162027
+    },
+    {
+      "id": "floor_906_int",
+      "code": "906_int",
+      "rawCode": "906",
+      "name": "Floor 906_int Floor",
+      "path": "levels/arena_906_int_floor.iff",
+      "shard": "0O",
+      "size": 131304
+    },
+    {
+      "id": "floor_924_int",
+      "code": "924_int",
+      "rawCode": "924",
+      "name": "Floor 924_int Floor",
+      "path": "levels/arena_924_int_floor.iff",
+      "shard": "0O",
+      "size": 163820
+    },
+    {
+      "id": "floor_aaugym_int",
+      "code": "aaugym_int",
+      "rawCode": "aaugym",
+      "name": "Floor aaugym_int Floor",
+      "path": "levels/arena_aaugym_int_floor.iff",
+      "shard": "0O",
+      "size": 99875
+    },
+    {
+      "id": "floor_anteup_int",
+      "code": "anteup_int",
+      "rawCode": "anteup",
+      "name": "Floor anteup_int Floor",
+      "path": "levels/arena_anteup_int_floor.iff",
+      "shard": "0O",
+      "size": 158672
+    },
+    {
+      "id": "floor_blacktop_ext",
+      "code": "blacktop_ext",
+      "rawCode": "blacktop",
+      "name": "Floor blacktop_ext Floor",
+      "path": "levels/arena_blacktop_ext_floor.iff",
+      "shard": "0O",
+      "size": 312
+    },
+    {
+      "id": "floor_brickleyfacility_int",
+      "code": "brickleyfacility_int",
+      "rawCode": "brickleyfacility",
+      "name": "Floor brickleyfacility_int Floor",
+      "path": "levels/arena_brickleyfacility_int_floor.iff",
+      "shard": "0O",
+      "size": 95095
+    },
+    {
+      "id": "floor_clippers2023_int",
+      "code": "clippers2023_int",
+      "rawCode": "clippers2023",
+      "name": "Floor clippers2023_int Floor",
+      "path": "levels/arena_clippers2023_int_floor.iff",
+      "shard": "0O",
+      "size": 164646
+    },
+    {
+      "id": "floor_clutchtime_int",
+      "code": "clutchtime_int",
+      "rawCode": "clutchtime",
+      "name": "Floor clutchtime_int Floor",
+      "path": "levels/arena_clutchtime_int_floor.iff",
+      "shard": "0O",
+      "size": 102376
+    },
+    {
+      "id": "floor_clutchtimeintro_int",
+      "code": "clutchtimeintro_int",
+      "rawCode": "clutchtimeintro",
+      "name": "Floor clutchtimeintro_int Floor",
+      "path": "levels/arena_clutchtimeintro_int_floor.iff",
+      "shard": "0O",
+      "size": 102386
+    },
+    {
+      "id": "floor_diongym_int",
+      "code": "diongym_int",
+      "rawCode": "diongym",
+      "name": "Floor diongym_int Floor",
+      "path": "levels/arena_diongym_int_floor.iff",
+      "shard": "0O",
+      "size": 192682
+    },
+    {
+      "id": "floor_era00s_int",
+      "code": "era00s_int",
+      "rawCode": "era00s",
+      "name": "Floor era00s_int Floor",
+      "path": "levels/arena_era00s_int_floor.iff",
+      "shard": "0O",
+      "size": 164770
+    },
+    {
+      "id": "floor_era80s_int",
+      "code": "era80s_int",
+      "rawCode": "era80s",
+      "name": "Floor era80s_int Floor",
+      "path": "levels/arena_era80s_int_floor.iff",
+      "shard": "0O",
+      "size": 139536
+    },
+    {
+      "id": "floor_era90s_int",
+      "code": "era90s_int",
+      "rawCode": "era90s",
+      "name": "Floor era90s_int Floor",
+      "path": "levels/arena_era90s_int_floor.iff",
+      "shard": "0O",
+      "size": 140367
+    },
+    {
+      "id": "floor_fiba_int",
+      "code": "fiba_int",
+      "rawCode": "fiba",
+      "name": "Floor fiba_int Floor",
+      "path": "levels/arena_fiba_int_floor.iff",
+      "shard": "0O",
+      "size": 132037
+    },
+    {
+      "id": "floor_gleaguegeneric_int",
+      "code": "gleaguegeneric_int",
+      "rawCode": "gleaguegeneric",
+      "name": "Floor gleaguegeneric_int Floor",
+      "path": "levels/arena_gleaguegeneric_int_floor.iff",
+      "shard": "0O",
+      "size": 140442
+    },
+    {
+      "id": "floor_gleaguemultipurpose_int",
+      "code": "gleaguemultipurpose_int",
+      "rawCode": "gleaguemultipurpose",
+      "name": "Floor gleaguemultipurpose_int Floor",
+      "path": "levels/arena_gleaguemultipurpose_int_floor.iff",
+      "shard": "0O",
+      "size": 159213
+    },
+    {
+      "id": "floor_gleaguewintershowcase_int",
+      "code": "gleaguewintershowcase_int",
+      "rawCode": "gleaguewintershowcase",
+      "name": "Floor gleaguewintershowcase_int Floor",
+      "path": "levels/arena_gleaguewintershowcase_int_floor.iff",
+      "shard": "0O",
+      "size": 187490
+    },
+    {
+      "id": "floor_hsgym_int",
+      "code": "hsgym_int",
+      "rawCode": "hsgym",
+      "name": "Floor hsgym_int Floor",
+      "path": "levels/arena_hsgym_int_floor.iff",
+      "shard": "0O",
+      "size": 163094
+    },
+    {
+      "id": "floor_inseasontournament_int",
+      "code": "inseasontournament_int",
+      "rawCode": "inseasontournament",
+      "name": "Floor inseasontournament_int Floor",
+      "path": "levels/arena_inseasontournament_int_floor.iff",
+      "shard": "0O",
+      "size": 149507
+    },
+    {
+      "id": "floor_matchmakinga_int",
+      "code": "matchmakinga_int",
+      "rawCode": "matchmakinga",
+      "name": "Floor matchmakinga_int Floor",
+      "path": "levels/arena_matchmakinga_int_floor.iff",
+      "shard": "0O",
+      "size": 124765
+    },
+    {
+      "id": "floor_matchmakingb_int",
+      "code": "matchmakingb_int",
+      "rawCode": "matchmakingb",
+      "name": "Floor matchmakingb_int Floor",
+      "path": "levels/arena_matchmakingb_int_floor.iff",
+      "shard": "0O",
+      "size": 129245
+    },
+    {
+      "id": "floor_multileague_int",
+      "code": "multileague_int",
+      "rawCode": "multileague",
+      "name": "Floor multileague_int Floor",
+      "path": "levels/arena_multileague_int_floor.iff",
+      "shard": "0O",
+      "size": 177312
+    },
+    {
+      "id": "floor_mycourt_int",
+      "code": "mycourt_int",
+      "rawCode": "mycourt",
+      "name": "Floor mycourt_int Floor",
+      "path": "levels/arena_mycourt_int_floor.iff",
+      "shard": "0O",
+      "size": 102915
+    },
+    {
+      "id": "floor_mytdome_int",
+      "code": "mytdome_int",
+      "rawCode": "mytdome",
+      "name": "Floor mytdome_int Floor",
+      "path": "levels/arena_mytdome_int_floor.iff",
+      "shard": "0O",
+      "size": 173549
+    },
+    {
+      "id": "floor_myteam_int",
+      "code": "myteam_int",
+      "rawCode": "myteam",
+      "name": "Floor myteam_int Floor",
+      "path": "levels/arena_myteam_int_floor.iff",
+      "shard": "0O",
+      "size": 103344
+    },
+    {
+      "id": "floor_practicefacility2k25_int",
+      "code": "practicefacility2k25_int",
+      "rawCode": "practicefacility2k25",
+      "name": "Floor practicefacility2k25_int Floor",
+      "path": "levels/arena_practicefacility2k25_int_floor.iff",
+      "shard": "0O",
+      "size": 257156
+    },
+    {
+      "id": "floor_practicefacility_int",
+      "code": "practicefacility_int",
+      "rawCode": "practicefacility",
+      "name": "Floor practicefacility_int Floor",
+      "path": "levels/arena_practicefacility_int_floor.iff",
+      "shard": "0O",
+      "size": 264101
+    },
+    {
+      "id": "floor_scrimmage3v3_int",
+      "code": "scrimmage3v3_int",
+      "rawCode": "scrimmage3v3",
+      "name": "Floor scrimmage3v3_int Floor",
+      "path": "levels/arena_scrimmage3v3_int_floor.iff",
+      "shard": "0O",
+      "size": 176609
+    },
+    {
+      "id": "floor_scrimmage5v5_int",
+      "code": "scrimmage5v5_int",
+      "rawCode": "scrimmage5v5",
+      "name": "Floor scrimmage5v5_int Floor",
+      "path": "levels/arena_scrimmage5v5_int_floor.iff",
+      "shard": "0O",
+      "size": 177253
+    },
+    {
+      "id": "floor_scrimmagehalf_int",
+      "code": "scrimmagehalf_int",
+      "rawCode": "scrimmagehalf",
+      "name": "Floor scrimmagehalf_int Floor",
+      "path": "levels/arena_scrimmagehalf_int_floor.iff",
+      "shard": "0O",
+      "size": 187976
+    },
+    {
+      "id": "floor_shooterfacility_int",
+      "code": "shooterfacility_int",
+      "rawCode": "shooterfacility",
+      "name": "Floor shooterfacility_int Floor",
+      "path": "levels/arena_shooterfacility_int_floor.iff",
+      "shard": "0O",
+      "size": 127729
+    },
+    {
+      "id": "floor_statechampionship_int",
+      "code": "statechampionship_int",
+      "rawCode": "statechampionship",
+      "name": "Floor statechampionship_int Floor",
+      "path": "levels/arena_statechampionship_int_floor.iff",
+      "shard": "0O",
+      "size": 150907
+    },
+    {
+      "id": "floor_triplethreat_int",
+      "code": "triplethreat_int",
+      "rawCode": "triplethreat",
+      "name": "Floor triplethreat_int Floor",
+      "path": "levels/arena_triplethreat_int_floor.iff",
+      "shard": "0O",
+      "size": 101416
+    },
+    {
+      "id": "floor_wnbageneric_int",
+      "code": "wnbageneric_int",
+      "rawCode": "wnbageneric",
+      "name": "Floor wnbageneric_int Floor",
+      "path": "levels/arena_wnbageneric_int_floor.iff",
+      "shard": "0O",
+      "size": 179941
+    },
+    {
+      "id": "floor_wnbagym_int",
+      "code": "wnbagym_int",
+      "rawCode": "wnbagym",
+      "name": "Floor wnbagym_int Floor",
+      "path": "levels/arena_wnbagym_int_floor.iff",
+      "shard": "0O",
+      "size": 99468
+    },
+    {
+      "id": "floor_000_int",
+      "code": "000_int",
+      "rawCode": "000",
+      "name": "Philadelphia 76ers Floor",
+      "path": "levels/arena_000_int_floor.iff",
+      "shard": "0W",
+      "size": 143585
+    },
+    {
+      "id": "floor_001_int",
+      "code": "001_int",
+      "rawCode": "001",
+      "name": "Boston Celtics Floor",
+      "path": "levels/arena_001_int_floor.iff",
+      "shard": "0X",
+      "size": 160162
+    },
+    {
+      "id": "floor_003_int",
+      "code": "003_int",
+      "rawCode": "003",
+      "name": "Chicago Bulls Floor",
+      "path": "levels/arena_003_int_floor.iff",
+      "shard": "0Y",
+      "size": 171213
+    },
+    {
+      "id": "floor_004_int",
+      "code": "004_int",
+      "rawCode": "004",
+      "name": "Cleveland Cavaliers Floor",
+      "path": "levels/arena_004_int_floor.iff",
+      "shard": "0Z",
+      "size": 144398
+    },
+    {
+      "id": "floor_005_int",
+      "code": "005_int",
+      "rawCode": "005",
+      "name": "Dallas Mavericks Floor",
+      "path": "levels/arena_005_int_floor.iff",
+      "shard": "1A",
+      "size": 139288
+    },
+    {
+      "id": "floor_006_int",
+      "code": "006_int",
+      "rawCode": "006",
+      "name": "Denver Nuggets Floor",
+      "path": "levels/arena_006_int_floor.iff",
+      "shard": "1B",
+      "size": 141296
+    },
+    {
+      "id": "floor_008_int",
+      "code": "008_int",
+      "rawCode": "008",
+      "name": "Detroit Pistons Floor",
+      "path": "levels/arena_008_int_floor.iff",
+      "shard": "1C",
+      "size": 140805
+    },
+    {
+      "id": "floor_009_int",
+      "code": "009_int",
+      "rawCode": "009",
+      "name": "Golden State Warriors Floor",
+      "path": "levels/arena_009_int_floor.iff",
+      "shard": "1D",
+      "size": 167767
+    },
+    {
+      "id": "floor_010_int",
+      "code": "010_int",
+      "rawCode": "010",
+      "name": "Houston Rockets Floor",
+      "path": "levels/arena_010_int_floor.iff",
+      "shard": "1E",
+      "size": 168028
+    },
+    {
+      "id": "floor_031_int",
+      "code": "031_int",
+      "rawCode": "031",
+      "name": "Atlanta Hawks Floor",
+      "path": "levels/arena_031_int_floor.iff",
+      "shard": "1F",
+      "size": 178940
+    },
+    {
+      "id": "floor_012_int",
+      "code": "012_int",
+      "rawCode": "012",
+      "name": "Floor 012_int Floor",
+      "path": "levels/arena_012_int_floor.iff",
+      "shard": "1G",
+      "size": 171572
+    },
+    {
+      "id": "floor_013_int",
+      "code": "013_int",
+      "rawCode": "013",
+      "name": "Memphis Grizzlies Floor",
+      "path": "levels/arena_013_int_floor.iff",
+      "shard": "1H",
+      "size": 166477
+    },
+    {
+      "id": "floor_014_int",
+      "code": "014_int",
+      "rawCode": "014",
+      "name": "Miami Heat Floor",
+      "path": "levels/arena_014_int_floor.iff",
+      "shard": "1I",
+      "size": 138735
+    },
+    {
+      "id": "floor_015_int",
+      "code": "015_int",
+      "rawCode": "015",
+      "name": "Los Angeles Lakers Floor",
+      "path": "levels/arena_015_int_floor.iff",
+      "shard": "1J",
+      "size": 164040
+    },
+    {
+      "id": "floor_016_int",
+      "code": "016_int",
+      "rawCode": "016",
+      "name": "Minnesota Timberwolves Floor",
+      "path": "levels/arena_016_int_floor.iff",
+      "shard": "1K",
+      "size": 168099
+    },
+    {
+      "id": "floor_017_int",
+      "code": "017_int",
+      "rawCode": "017",
+      "name": "Brooklyn Nets Floor",
+      "path": "levels/arena_017_int_floor.iff",
+      "shard": "1L",
+      "size": 143917
+    },
+    {
+      "id": "floor_018_int",
+      "code": "018_int",
+      "rawCode": "018",
+      "name": "New York Knicks Floor",
+      "path": "levels/arena_018_int_floor.iff",
+      "shard": "1M",
+      "size": 167337
+    },
+    {
+      "id": "floor_019_int",
+      "code": "019_int",
+      "rawCode": "019",
+      "name": "Orlando Magic Floor",
+      "path": "levels/arena_019_int_floor.iff",
+      "shard": "1N",
+      "size": 146677
+    },
+    {
+      "id": "floor_020_int",
+      "code": "020_int",
+      "rawCode": "020",
+      "name": "New Orleans Pelicans Floor",
+      "path": "levels/arena_020_int_floor.iff",
+      "shard": "1O",
+      "size": 143071
+    },
+    {
+      "id": "floor_011_int",
+      "code": "011_int",
+      "rawCode": "011",
+      "name": "Indiana Pacers Floor",
+      "path": "levels/arena_011_int_floor.iff",
+      "shard": "1P",
+      "size": 164547
+    },
+    {
+      "id": "floor_021_int",
+      "code": "021_int",
+      "rawCode": "021",
+      "name": "Phoenix Suns Floor",
+      "path": "levels/arena_021_int_floor.iff",
+      "shard": "1Q",
+      "size": 140524
+    },
+    {
+      "id": "floor_022_int",
+      "code": "022_int",
+      "rawCode": "022",
+      "name": "Portland Trail Blazers Floor",
+      "path": "levels/arena_022_int_floor.iff",
+      "shard": "1R",
+      "size": 161589
+    },
+    {
+      "id": "floor_023_int",
+      "code": "023_int",
+      "rawCode": "023",
+      "name": "Sacramento Kings Floor",
+      "path": "levels/arena_023_int_floor.iff",
+      "shard": "1S",
+      "size": 138174
+    },
+    {
+      "id": "floor_025_int",
+      "code": "025_int",
+      "rawCode": "025",
+      "name": "Oklahoma City Thunder Floor",
+      "path": "levels/arena_025_int_floor.iff",
+      "shard": "1T",
+      "size": 137721
+    },
+    {
+      "id": "floor_026_int",
+      "code": "026_int",
+      "rawCode": "026",
+      "name": "Utah Jazz Floor",
+      "path": "levels/arena_026_int_floor.iff",
+      "shard": "1U",
+      "size": 167596
+    },
+    {
+      "id": "floor_024_int",
+      "code": "024_int",
+      "rawCode": "024",
+      "name": "San Antonio Spurs Floor",
+      "path": "levels/arena_024_int_floor.iff",
+      "shard": "1V",
+      "size": 141057
+    },
+    {
+      "id": "floor_027_int",
+      "code": "027_int",
+      "rawCode": "027",
+      "name": "Washington Wizards Floor",
+      "path": "levels/arena_027_int_floor.iff",
+      "shard": "1W",
+      "size": 141047
+    },
+    {
+      "id": "floor_028_int",
+      "code": "028_int",
+      "rawCode": "028",
+      "name": "Charlotte Hornets Floor",
+      "path": "levels/arena_028_int_floor.iff",
+      "shard": "1X",
+      "size": 135965
+    },
+    {
+      "id": "floor_002_int",
+      "code": "002_int",
+      "rawCode": "002",
+      "name": "LA Clippers Floor",
+      "path": "levels/arena_002_int_floor.iff",
+      "shard": "1Z",
+      "size": 137099
+    }
+  ]
+}

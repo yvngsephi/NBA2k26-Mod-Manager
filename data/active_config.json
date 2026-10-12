@@ -1,0 +1,17 @@
+{
+  "modsPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\NBA 2K26\\Mods",
+  "activeSlots": {
+    "blacktop": {
+      "teamCode": "blacktop",
+      "arenaCode": "practicefacility2k25_int",
+      "floorCode": "practicefacility2k25_int",
+      "appliedAt": "now"
+    },
+    "team_014": {
+      "teamCode": "team_014",
+      "arenaCode": "arena_014_int",
+      "floorCode": "arena_014_int_floor",
+      "appliedAt": "now"
+    }
+  }
+}
