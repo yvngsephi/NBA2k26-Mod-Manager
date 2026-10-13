@@ -3,8 +3,11 @@
   "activeSlots": {
     "blacktop": {
       "teamCode": "blacktop",
-      "arenaCode": "arena_blacktop_ext",
-      "floorCode": "blacktop",
+      "arenaCode": "brickleyfacility_int",
+      "floorCode": "brickleyfacility_int",
+      "ruleset": "blacktop",
+      "compatibility": "street",
+      "force84ftRuleset": false,
       "appliedAt": "now"
     },
     "team_014": {
@@ -18,8 +21,11 @@
     },
     "team_012": {
       "teamCode": "team_012",
-      "arenaCode": "hsgym_int",
-      "floorCode": "hsgym_int",
+      "arenaCode": "mytdome_int",
+      "floorCode": "mytdome_int",
+      "ruleset": "94ft",
+      "compatibility": "nba_94ft",
+      "force84ftRuleset": false,
       "appliedAt": "now"
     },
     "team_010": {

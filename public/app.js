@@ -224,15 +224,12 @@ function updateActiveTeamCard() {
   const currentActive = activeSlots[selectedTeam.id];
   if (currentActive) {
     const arenaName = allArenas.find(a => a.code === currentActive.arenaCode)?.name || currentActive.arenaCode;
-    const rulesetTag = (currentActive.force84ftRuleset || currentActive.ruleset === '84ft')
-      ? ' <span class="compat-badge badge-hs">84ft Ruleset</span>'
-      : '';
-    activeConfigSummary.innerHTML = `${arenaName} [Floor: ${currentActive.floorCode}]${rulesetTag}`;
+    activeConfigSummary.textContent = arenaName;
     activeConfigSummary.style.color = '#22C55E';
     resetBtn.disabled = false;
   } else {
-    activeConfigSummary.textContent = 'Official Default (Unmodified)';
-    activeConfigSummary.style.color = '#9CA3AF';
+    activeConfigSummary.textContent = 'Default';
+    activeConfigSummary.style.color = '#717885';
     resetBtn.disabled = true;
   }
 }
@@ -296,9 +293,9 @@ function renderArenas() {
     const isSelected = selectedArena && selectedArena.code === arena.code;
     const isCurrentlyActive = activeSlots[selectedTeam?.id]?.arenaCode === arena.code;
 
-    const badgeHtml = arena.badgeLabel
-      ? `<span class="compat-badge ${arena.badgeClass || 'badge-nba'}">${arena.badgeLabel}</span>`
-      : `<span class="compat-badge badge-nba">NBA 5v5 (94ft)</span>`;
+    let shortBadge = arena.badgeLabel || 'NBA 94ft';
+    shortBadge = shortBadge.replace(' (94ft)', ' 94ft').replace(' (84ft)', ' 84ft').replace(' / 3v3', ' 3v3').replace(' / Blacktop', '');
+    const badgeHtml = `<span class="compat-badge ${arena.badgeClass || 'badge-nba'}">${shortBadge}</span>`;
 
     card.className = `court-card ${isSelected ? 'selected' : ''} ${isCurrentlyActive ? 'active-assigned' : ''}`;
     card.innerHTML = `
@@ -314,7 +311,6 @@ function renderArenas() {
           <span class="card-code">${arena.code}</span>
           <span>${arena.shard ? `Shard ${arena.shard}` : 'Mod'}</span>
         </div>
-        ${arena.description ? `<div class="card-desc">${arena.description}</div>` : ''}
       </div>
     `;
 
@@ -390,7 +386,7 @@ function updateDock() {
   dockTargetTeam.textContent = selectedTeam.name;
 
   if (selectedArena) {
-    dockSelectedArena.textContent = `${selectedArena.name} (${selectedArena.code})`;
+    dockSelectedArena.textContent = selectedArena.name;
     applyBtn.disabled = false;
   } else {
     dockSelectedArena.textContent = 'None';
@@ -399,20 +395,21 @@ function updateDock() {
 
   if (dockCourtScale) {
     if (selectedArena) {
-      dockCourtScale.innerHTML = selectedArena.badgeLabel
-        ? `<span class="compat-badge ${selectedArena.badgeClass}">${selectedArena.badgeLabel}</span>`
-        : '<span class="compat-badge badge-nba">NBA 5v5 (94ft)</span>';
+      let shortBadge = selectedArena.badgeLabel || 'NBA 94ft';
+      shortBadge = shortBadge.replace(' (94ft)', ' 94ft').replace(' (84ft)', ' 84ft').replace(' / 3v3', ' 3v3').replace(' / Blacktop', '');
+      dockCourtScale.innerHTML = `<span class="compat-badge ${selectedArena.badgeClass || 'badge-nba'}">${shortBadge}</span>`;
     } else {
-      dockCourtScale.textContent = 'None';
+      dockCourtScale.textContent = '—';
     }
   }
 
   if (selectedFloor) {
-    dockSelectedFloor.textContent = `${selectedFloor.name}`;
+    const cleanFloorName = selectedFloor.name.replace(/^Floor\s+/i, '').replace(/\s+Floor$/i, '');
+    dockSelectedFloor.textContent = cleanFloorName;
   } else if (syncFloor && selectedArena) {
-    dockSelectedFloor.textContent = 'Auto (Matched to Arena)';
+    dockSelectedFloor.textContent = 'Auto';
   } else {
-    dockSelectedFloor.textContent = 'Default Floor';
+    dockSelectedFloor.textContent = 'Default';
   }
 }
 

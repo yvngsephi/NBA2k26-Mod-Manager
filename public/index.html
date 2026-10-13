@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NBA 2K26 Live Court & Floor Editor</title>
+  <title>NBA 2K26 Court Editor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header Bar -->
   <header class="app-header">
     <div class="brand-section">
-      <h1 class="brand-title">NBA 2K26 Live Court & Floor Editor</h1>
-      <span class="version-tag">Studio v2.4</span>
+      <h1 class="brand-title">NBA 2K26 Court Editor</h1>
     </div>
     <div class="header-right">
       <div id="gameStatusPill" class="status-pill status-standby">
         <span class="status-dot"></span>
-        <span id="gameStatusText">Standby: Searching for NBA 2K26...</span>
+        <span id="gameStatusText">Offline</span>
       </div>
-      <button id="refreshStatusBtn" class="btn btn-ghost" title="Refresh Live Status">Refresh</button>
+      <button id="refreshStatusBtn" class="btn btn-ghost" title="Check Connection">Refresh</button>
+      <button id="syncRosterBtn" class="btn btn-sync" title="Sync Roster from NBA 2K26">
+        <svg class="sync-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        Sync Roster
+      </button>
     </div>
   </header>
 
@@ -27,20 +30,13 @@
     <!-- Left Sidebar: Teams Navigation -->
     <aside class="sidebar-teams">
       <div class="sidebar-header">
-        <div class="sidebar-title-row">
-          <div class="sidebar-title">Select Team</div>
-          <button id="syncRosterBtn" class="btn btn-sync" title="Sync / Refresh Roster from NBA 2K26">
-            <svg class="sync-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-            Sync Roster
-          </button>
-        </div>
+        <input type="text" id="teamSearchInput" class="input-filter" placeholder="Search teams...">
         <div class="team-category-tabs" id="teamCategoryTabs">
           <button class="team-tab-btn active" data-cat="all">All</button>
-          <button class="team-tab-btn" data-cat="nba_current">Current NBA</button>
+          <button class="team-tab-btn" data-cat="nba_current">NBA</button>
           <button class="team-tab-btn" data-cat="classic">Classic</button>
           <button class="team-tab-btn" data-cat="street">Street</button>
         </div>
-        <input type="text" id="teamSearchInput" class="input-filter" placeholder="Search teams...">
       </div>
       <div class="team-list" id="teamList">
         <!-- Rendered via app.js -->
@@ -49,43 +45,43 @@
 
     <!-- Main Content Area: Editor Workspace -->
     <main class="editor-main">
-      <!-- Active Team Summary Card -->
+      <!-- Active Team Banner -->
       <section class="active-team-card">
         <div class="team-identity">
           <span id="teamBadge" class="team-abbr-badge">MIA</span>
           <div class="team-details">
             <h2 id="teamHeading" class="team-heading">Miami Heat</h2>
             <div class="team-assignment-meta">
-              <span class="meta-item">Default: <strong id="teamDefaultArena">Kaseya Center (014)</strong></span>
-              <span class="meta-item">Floor: <strong id="teamDefaultFloor">Miami Heat Floor (014)</strong></span>
+              <span>Default: <strong id="teamDefaultArena">Kaseya Center</strong></span>
+              <span id="teamDefaultFloorWrapper" style="display:none;"><strong id="teamDefaultFloor">Floor</strong></span>
             </div>
           </div>
         </div>
         <div class="active-state-box">
-          <div class="state-label">Current Configuration</div>
-          <div id="activeConfigSummary" class="state-value">Official Default (Unmodified)</div>
+          <div class="state-label">Assigned</div>
+          <div id="activeConfigSummary" class="state-value">Default</div>
         </div>
       </section>
 
       <!-- Selection Mode Tabs -->
       <nav class="editor-tabs">
-        <button class="editor-tab active" data-pane="arenasPane">Arena / Court</button>
-        <button class="editor-tab" data-pane="floorsPane">Floor Pattern</button>
+        <button class="editor-tab active" data-pane="arenasPane">Courts</button>
+        <button class="editor-tab" data-pane="floorsPane">Floors</button>
       </nav>
 
       <!-- Pane 1: Arena / Court Picker -->
       <section id="arenasPane" class="tab-pane active">
         <div class="pane-toolbar">
           <div class="category-tabs" id="arenaCategoryTabs">
-            <button class="tab-btn active" data-category="all">All Arenas</button>
-            <button class="tab-btn" data-category="nba">🟢 NBA 5v5 (94ft)</button>
-            <button class="tab-btn" data-category="hs">🟡 High School (84ft)</button>
-            <button class="tab-btn" data-category="street">🔵 Street & Parks</button>
-            <button class="tab-btn" data-category="arcade">🟣 Arcade / 3v3</button>
-            <button class="tab-btn" data-category="classic">Classic Eras</button>
-            <button class="tab-btn" data-category="mods">Custom Mods</button>
+            <button class="tab-btn active" data-category="all">All</button>
+            <button class="tab-btn" data-category="nba">NBA 5v5</button>
+            <button class="tab-btn" data-category="hs">High School</button>
+            <button class="tab-btn" data-category="street">Street</button>
+            <button class="tab-btn" data-category="arcade">Arcade</button>
+            <button class="tab-btn" data-category="classic">Classic</button>
+            <button class="tab-btn" data-category="mods">Mods</button>
           </div>
-          <input type="text" id="arenaSearchInput" class="input-search" placeholder="Search 150+ arenas...">
+          <input type="text" id="arenaSearchInput" class="input-search" placeholder="Search courts...">
         </div>
         <div class="court-grid" id="arenaGrid">
           <!-- Rendered via app.js -->
@@ -98,7 +94,7 @@
           <div class="floor-sync-toggle">
             <label class="checkbox-label">
               <input type="checkbox" id="syncFloorCheckbox" checked>
-              <span>Auto-match floor to selected arena (Recommended)</span>
+              <span>Auto-match floor to court</span>
             </label>
           </div>
           <input type="text" id="floorSearchInput" class="input-search" placeholder="Search floors...">
@@ -113,52 +109,42 @@
   <!-- Bottom Action Dock -->
   <footer class="action-dock">
     <div class="dock-summary">
-      <div class="dock-row">
-        <span class="dock-label">Target Team:</span>
+      <div class="dock-col">
+        <span class="dock-label">Target</span>
         <span id="dockTargetTeam" class="dock-value">Miami Heat</span>
       </div>
-      <div class="dock-row">
-        <span class="dock-label">Selected Court:</span>
+      <div class="dock-divider"></div>
+      <div class="dock-col">
+        <span class="dock-label">Selected Court</span>
         <span id="dockSelectedArena" class="dock-value">None</span>
       </div>
-      <div class="dock-row">
-        <span class="dock-label">Court Scale:</span>
-        <span id="dockCourtScale" class="dock-value">🟢 NBA 5v5 (94ft)</span>
+      <div class="dock-col">
+        <span class="dock-label">Format</span>
+        <span id="dockCourtScale" class="dock-value">NBA 94ft</span>
       </div>
-      <div class="dock-row">
-        <span class="dock-label">Selected Floor:</span>
-        <span id="dockSelectedFloor" class="dock-value">Auto (Matched)</span>
+      <div class="dock-divider"></div>
+      <div class="dock-col">
+        <span class="dock-label">Floor</span>
+        <span id="dockSelectedFloor" class="dock-value">Auto</span>
       </div>
-    </div>
-    
-    <!-- Approach 2: Ruleset / Dimension Enforcement Toggle -->
-    <div class="dock-ruleset-control" id="dockRulesetContainer">
-      <label class="ruleset-toggle-label" title="Alters gameplay hoop coordinates in memory so shots align with 84-foot high school gym backboards in Play Now">
-        <input type="checkbox" id="forceRulesetCheckbox">
-        <span class="toggle-track">
-          <span class="toggle-thumb"></span>
-        </span>
-        <span class="ruleset-text-group">
-          <span class="ruleset-title" id="rulesetStatusLabel">Auto Ruleset: 94ft Regulation</span>
-          <span class="ruleset-sub" id="rulesetHintText">Auto-enables 84ft rim targets for High School gyms</span>
-        </span>
-      </label>
     </div>
 
-    <div class="dock-mode-indicator">
-      <span class="mode-tag">Direct Memory Connect</span>
-      <span class="mode-sub">0 Archive Extraction &bull; Instant Shard Stream</span>
+    <!-- Hidden compatibility elements to maintain JS bindings -->
+    <div id="dockRulesetContainer" style="display:none;">
+      <input type="checkbox" id="forceRulesetCheckbox">
+      <span id="rulesetStatusLabel"></span>
+      <span id="rulesetHintText"></span>
     </div>
+
     <div class="dock-actions">
-      <button id="resetBtn" class="btn btn-secondary">Reset to Default</button>
-      <button id="applyBtn" class="btn btn-primary" disabled>Apply to Team (Live)</button>
+      <button id="resetBtn" class="btn btn-secondary">Reset</button>
+      <button id="applyBtn" class="btn btn-primary" disabled>Apply Court</button>
     </div>
   </footer>
 
-  <!-- Realtime Diagnostic Console Line -->
+  <!-- Realtime Diagnostic Status Line -->
   <div class="diagnostic-bar">
-    <span class="diag-label">SYSTEM CONSOLE</span>
-    <span id="diagnosticMsg" class="diag-text">Engine ready. Waiting for NBA 2K26 execution.</span>
+    <span id="diagnosticMsg" class="diag-text">Ready.</span>
   </div>
 
   <!-- Toast Notification -->
