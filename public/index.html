@@ -78,10 +78,12 @@
         <div class="pane-toolbar">
           <div class="category-tabs" id="arenaCategoryTabs">
             <button class="tab-btn active" data-category="all">All Arenas</button>
-            <button class="tab-btn" data-category="nba">NBA Official</button>
-            <button class="tab-btn" data-category="classic">Classic / Era</button>
-            <button class="tab-btn" data-category="street">Street & Parks</button>
-            <button class="tab-btn" data-category="mods">Downloaded Mods</button>
+            <button class="tab-btn" data-category="nba">🟢 NBA 5v5 (94ft)</button>
+            <button class="tab-btn" data-category="hs">🟡 High School (84ft)</button>
+            <button class="tab-btn" data-category="street">🔵 Street & Parks</button>
+            <button class="tab-btn" data-category="arcade">🟣 Arcade / 3v3</button>
+            <button class="tab-btn" data-category="classic">Classic Eras</button>
+            <button class="tab-btn" data-category="mods">Custom Mods</button>
           </div>
           <input type="text" id="arenaSearchInput" class="input-search" placeholder="Search 150+ arenas...">
         </div>
@@ -120,10 +122,29 @@
         <span id="dockSelectedArena" class="dock-value">None</span>
       </div>
       <div class="dock-row">
+        <span class="dock-label">Court Scale:</span>
+        <span id="dockCourtScale" class="dock-value">🟢 NBA 5v5 (94ft)</span>
+      </div>
+      <div class="dock-row">
         <span class="dock-label">Selected Floor:</span>
         <span id="dockSelectedFloor" class="dock-value">Auto (Matched)</span>
       </div>
     </div>
+    
+    <!-- Approach 2: Ruleset / Dimension Enforcement Toggle -->
+    <div class="dock-ruleset-control" id="dockRulesetContainer">
+      <label class="ruleset-toggle-label" title="Alters gameplay hoop coordinates in memory so shots align with 84-foot high school gym backboards in Play Now">
+        <input type="checkbox" id="forceRulesetCheckbox">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="ruleset-text-group">
+          <span class="ruleset-title" id="rulesetStatusLabel">Auto Ruleset: 94ft Regulation</span>
+          <span class="ruleset-sub" id="rulesetHintText">Auto-enables 84ft rim targets for High School gyms</span>
+        </span>
+      </label>
+    </div>
+
     <div class="dock-mode-indicator">
       <span class="mode-tag">Direct Memory Connect</span>
       <span class="mode-sub">0 Archive Extraction &bull; Instant Shard Stream</span>

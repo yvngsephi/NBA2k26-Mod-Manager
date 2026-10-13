@@ -31,7 +31,8 @@ body {
   font-family: var(--font-family);
   font-size: 13px;
   line-height: 1.5;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
@@ -110,6 +111,7 @@ body {
 .app-workspace {
   display: flex;
   flex: 1;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -121,6 +123,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  min-height: 0;
 }
 
 .sidebar-header {
@@ -225,6 +228,7 @@ body {
 
 .team-list {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 8px;
   display: flex;
@@ -297,6 +301,7 @@ body {
 /* Editor Main Area */
 .editor-main {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-base);
@@ -710,4 +715,150 @@ body {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Compatibility Badges */
+.compat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.badge-nba {
+  background-color: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #4ADE80;
+}
+
+.badge-hs {
+  background-color: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #FBBF24;
+}
+
+.badge-street {
+  background-color: rgba(14, 165, 233, 0.14);
+  border-color: rgba(14, 165, 233, 0.35);
+  color: #38BDF8;
+}
+
+.badge-arcade {
+  background-color: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #C084FC;
+}
+
+.badge-mods {
+  background-color: rgba(224, 90, 43, 0.15);
+  border-color: rgba(224, 90, 43, 0.4);
+  color: #FB923C;
+}
+
+/* Court Card Badge placement */
+.court-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.court-card-header .card-title {
+  flex: 1;
+}
+
+.card-desc {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 3px;
+}
+
+/* Dock Ruleset Control */
+.dock-ruleset-control {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.dock-ruleset-control.active-84ft {
+  border-color: rgba(245, 158, 11, 0.6);
+  background-color: rgba(245, 158, 11, 0.08);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.ruleset-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ruleset-toggle-label input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-track {
+  width: 32px;
+  height: 18px;
+  background-color: #2E333E;
+  border-radius: 10px;
+  position: relative;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: #FFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ruleset-toggle-label input:checked + .toggle-track {
+  background-color: #F59E0B;
+}
+
+.ruleset-toggle-label input:checked + .toggle-track .toggle-thumb {
+  transform: translateX(14px);
+}
+
+.ruleset-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ruleset-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.active-84ft .ruleset-title {
+  color: #FBBF24;
+}
+
+.ruleset-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.2;
 }

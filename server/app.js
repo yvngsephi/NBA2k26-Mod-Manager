@@ -141,6 +141,79 @@ function createApp(options = {}) {
     });
   });
 
+  const FRIENDLY_ARENA_NAMES = {
+    'arena_hsgym_int': 'High School Gym (84ft)',
+    'arena_aaugym_int': 'AAU Circuit Gym (84ft)',
+    'arena_diongym_int': 'Dion Training Facility (84ft)',
+    'arena_statechampionship_int': 'State Championship Arena (84ft)',
+    'arena_blacktop_ext': 'Blacktop Outdoor Park',
+    'arena_brickleyfacility_int': 'Chris Brickley Gym',
+    'arena_practicefacility2k25_int': 'NBA Practice Facility',
+    'arena_practicefacility_int': 'Legacy Practice Facility',
+    'arena_shooterfacility_int': 'Shooter Training Lab',
+    'arena_triplethreat_int': 'Triple Threat Arena (3v3)',
+    'arena_clutchtime_int': 'Clutch Time Arena',
+    'arena_clutchtimeintro_int': 'Clutch Time Intro Arena',
+    'arena_provinggroundsa_int': 'Proving Grounds (Court A)',
+    'arena_provinggroundsb_int': 'Proving Grounds (Court B)',
+    'arena_mycourt_int': 'MyCOURT Indoor Facility',
+    'arena_anteup_int': 'Ante-Up High Stakes Park',
+    'arena_fiba_int': 'FIBA International Court',
+    'arena_inseasontournament_int': 'NBA Cup In-Season Tournament Court',
+    'arena_clippers2023_int': 'Intuit Dome (LA Clippers 2024)'
+  };
+
+  function enrichArenaWithCompatibility(arena) {
+    const code = (arena.code || arena.id || '').toLowerCase();
+    let compatibility = 'nba_94ft';
+    let badgeLabel = 'NBA 5v5 (94ft)';
+    let badgeClass = 'badge-nba';
+    let dimension = '94ft';
+    let ruleset = '94ft';
+    let playNowCompatible = true;
+    let description = 'Official 94ft regulation court. 100% Play Now aligned.';
+
+    if (code.includes('hsgym') || code.includes('aaugym') || code.includes('diongym') || code.includes('statechampionship')) {
+      compatibility = 'hs_84ft';
+      badgeLabel = 'High School (84ft)';
+      badgeClass = 'badge-hs';
+      dimension = '84ft';
+      ruleset = '84ft';
+      playNowCompatible = true;
+      description = 'Authentic 84ft dimensions. Uses 84ft shot alignment ruleset.';
+    } else if (arena.category === 'street' || arena.isLocalMod || code.includes('blacktop') || code.includes('brickley') || code.includes('shooterfacility') || code.includes('practicefacility') || code.includes('mycourt') || code.includes('anteup')) {
+      compatibility = 'street';
+      badgeLabel = 'Street / Blacktop';
+      badgeClass = 'badge-street';
+      dimension = 'Streetball';
+      ruleset = 'blacktop';
+      playNowCompatible = false;
+      description = 'Streetball & practice facility court. Optimized for Blacktop mode.';
+    } else if (code.includes('triplethreat') || code.includes('clutchtime') || code.includes('provinggrounds') || code.includes('scrimmage3v3') || code.includes('matchmaking')) {
+      compatibility = 'arcade';
+      badgeLabel = 'Arcade / 3v3';
+      badgeClass = 'badge-arcade';
+      dimension = 'Special';
+      ruleset = 'arcade';
+      playNowCompatible = false;
+      description = '3v3 and arcade mini-court dimensions.';
+    }
+
+    const friendlyName = FRIENDLY_ARENA_NAMES[arena.id] || FRIENDLY_ARENA_NAMES[`arena_${arena.code}`] || arena.name;
+
+    return {
+      ...arena,
+      name: friendlyName,
+      compatibility,
+      badgeLabel,
+      badgeClass,
+      dimension,
+      ruleset,
+      playNowCompatible,
+      description
+    };
+  }
+
   // Genuine Manifest catalog endpoint
   app.get('/api/catalog', (req, res) => {
     const catalog = loadManifestCatalog();
@@ -157,9 +230,11 @@ function createApp(options = {}) {
       isLocalMod: true
     }));
 
+    const enrichedArenas = [...catalog.arenas, ...formattedMods].map(enrichArenaWithCompatibility);
+
     res.json({
       success: true,
-      arenas: [...catalog.arenas, ...formattedMods],
+      arenas: enrichedArenas,
       floors: catalog.floors
     });
   });
@@ -177,7 +252,7 @@ function createApp(options = {}) {
 
   // Editor Apply endpoint (Live Memory + Active Config, 0 file extraction)
   app.post('/api/editor/apply', (req, res) => {
-    const { teamId, arenaCode, floorCode } = req.body;
+    const { teamId, arenaCode, floorCode, force84ftRuleset } = req.body;
     if (!teamId || !arenaCode) {
       return res.status(400).json({ success: false, error: 'teamId and arenaCode are required' });
     }
@@ -194,6 +269,7 @@ function createApp(options = {}) {
         courtId: arenaCode,
         arenaCode,
         floorCode: effectiveFloor,
+        force84ftRuleset: Boolean(force84ftRuleset),
         targetArenaCode,
         targetFloorCode
       });
@@ -201,16 +277,24 @@ function createApp(options = {}) {
       console.error('File deployment warning:', err.message);
     }
 
-    // 2. Call connector to write live memory if game is running
-    const liveResult = runConnector('apply', [teamId, arenaCode, effectiveFloor]);
+    // 2. Call connector to write live memory and enforce ruleset if game is running
+    const isHs = arenaCode.toLowerCase().includes('hsgym') ||
+                 arenaCode.toLowerCase().includes('aaugym') ||
+                 arenaCode.toLowerCase().includes('diongym') ||
+                 arenaCode.toLowerCase().includes('statechampionship');
+    const rulesetArg = force84ftRuleset ? '84ft' : (isHs ? '84ft' : '94ft');
+    const liveResult = runConnector('apply', [teamId, arenaCode, effectiveFloor, rulesetArg]);
 
     res.json({
       success: true,
       teamId,
       arenaCode,
       floorCode: effectiveFloor,
+      ruleset: rulesetArg,
+      force84ftRuleset: rulesetArg === '84ft',
       liveMemoryUpdated: liveResult?.liveMemoryUpdated || false,
-      processAttached: liveResult?.processAttached || false
+      processAttached: liveResult?.processAttached || false,
+      details: liveResult?.details || []
     });
   });
 

@@ -338,12 +338,22 @@ class SwapperEngine {
       }
     }
 
+    const isHsGym = (effectiveArena || '').toLowerCase().includes('hsgym') ||
+                    (effectiveArena || '').toLowerCase().includes('aaugym') ||
+                    (effectiveArena || '').toLowerCase().includes('diongym') ||
+                    (effectiveArena || '').toLowerCase().includes('statechampionship');
+    const effectiveRuleset = params.force84ftRuleset ? '84ft' : (isHsGym ? '84ft' : (slot === 'blacktop' ? 'blacktop' : '94ft'));
+    const effectiveCompat = isHsGym ? 'hs_84ft' : (slot === 'blacktop' ? 'street' : 'nba_94ft');
+
     const state = this.getActiveState();
     state.activeSlots[slot] = {
       courtId: courtId || effectiveArena,
       courtName: courtName || effectiveArena,
       arenaCode: effectiveArena,
       floorCode: effectiveFloor,
+      ruleset: effectiveRuleset,
+      compatibility: effectiveCompat,
+      force84ftRuleset: effectiveRuleset === '84ft',
       appliedFiles,
       appliedAt: new Date().toISOString()
     };
@@ -354,6 +364,8 @@ class SwapperEngine {
       slot,
       courtId: courtId || effectiveArena,
       courtName: courtName || effectiveArena,
+      ruleset: effectiveRuleset,
+      force84ftRuleset: effectiveRuleset === '84ft',
       appliedFiles
     };
   }

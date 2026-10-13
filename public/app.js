@@ -41,7 +41,12 @@ const floorGrid = document.getElementById('floorGrid');
 
 const dockTargetTeam = document.getElementById('dockTargetTeam');
 const dockSelectedArena = document.getElementById('dockSelectedArena');
+const dockCourtScale = document.getElementById('dockCourtScale');
 const dockSelectedFloor = document.getElementById('dockSelectedFloor');
+const forceRulesetCheckbox = document.getElementById('forceRulesetCheckbox');
+const dockRulesetContainer = document.getElementById('dockRulesetContainer');
+const rulesetStatusLabel = document.getElementById('rulesetStatusLabel');
+const rulesetHintText = document.getElementById('rulesetHintText');
 const applyBtn = document.getElementById('applyBtn');
 const resetBtn = document.getElementById('resetBtn');
 const diagnosticMsg = document.getElementById('diagnosticMsg');
@@ -219,7 +224,10 @@ function updateActiveTeamCard() {
   const currentActive = activeSlots[selectedTeam.id];
   if (currentActive) {
     const arenaName = allArenas.find(a => a.code === currentActive.arenaCode)?.name || currentActive.arenaCode;
-    activeConfigSummary.textContent = `${arenaName} [Floor: ${currentActive.floorCode}]`;
+    const rulesetTag = (currentActive.force84ftRuleset || currentActive.ruleset === '84ft')
+      ? ' <span class="compat-badge badge-hs">84ft Ruleset</span>'
+      : '';
+    activeConfigSummary.innerHTML = `${arenaName} [Floor: ${currentActive.floorCode}]${rulesetTag}`;
     activeConfigSummary.style.color = '#22C55E';
     resetBtn.disabled = false;
   } else {
@@ -229,17 +237,56 @@ function updateActiveTeamCard() {
   }
 }
 
+// Ruleset Switch UI Helper (Approach 2)
+function updateRulesetUI(isForced) {
+  if (!dockRulesetContainer || !rulesetStatusLabel || !rulesetHintText) return;
+  if (isForced) {
+    dockRulesetContainer.classList.add('active-84ft');
+    rulesetStatusLabel.textContent = 'Force 84ft Ruleset (ACTIVE)';
+    rulesetHintText.textContent = 'Rim targets shifted 5ft inward for 84ft gym alignment in Play Now';
+  } else {
+    dockRulesetContainer.classList.remove('active-84ft');
+    rulesetStatusLabel.textContent = 'Auto Ruleset: 94ft Regulation';
+    rulesetHintText.textContent = 'Standard NBA rim coords (94ft Play Now)';
+  }
+}
+
+forceRulesetCheckbox?.addEventListener('change', (e) => {
+  updateRulesetUI(e.target.checked);
+  if (e.target.checked) {
+    showToast('Ruleset forced to 84-foot High School mode');
+  } else {
+    showToast('Ruleset set to 94-foot NBA Regulation mode');
+  }
+});
+
 // Render Arenas Grid
 function renderArenas() {
   arenaGrid.innerHTML = '';
 
   const filtered = allArenas.filter(a => {
-    if (currentArenaCategory !== 'all' && a.category !== currentArenaCategory) {
-      return false;
+    if (currentArenaCategory !== 'all') {
+      if (currentArenaCategory === 'nba') {
+        if (a.compatibility !== 'nba_94ft' || a.category !== 'nba') return false;
+      } else if (currentArenaCategory === 'hs') {
+        if (a.compatibility !== 'hs_84ft') return false;
+      } else if (currentArenaCategory === 'street') {
+        if (a.compatibility !== 'street') return false;
+      } else if (currentArenaCategory === 'arcade') {
+        if (a.compatibility !== 'arcade') return false;
+      } else if (currentArenaCategory === 'classic') {
+        if (a.category !== 'classic') return false;
+      } else if (currentArenaCategory === 'mods') {
+        if (a.category !== 'mods' && !a.isLocalMod) return false;
+      }
     }
     if (arenaSearchQuery) {
       const q = arenaSearchQuery.toLowerCase();
-      return a.name.toLowerCase().includes(q) || a.code.toLowerCase().includes(q);
+      return (
+        a.name.toLowerCase().includes(q) ||
+        a.code.toLowerCase().includes(q) ||
+        (a.badgeLabel && a.badgeLabel.toLowerCase().includes(q))
+      );
     }
     return true;
   });
@@ -249,17 +296,25 @@ function renderArenas() {
     const isSelected = selectedArena && selectedArena.code === arena.code;
     const isCurrentlyActive = activeSlots[selectedTeam?.id]?.arenaCode === arena.code;
 
+    const badgeHtml = arena.badgeLabel
+      ? `<span class="compat-badge ${arena.badgeClass || 'badge-nba'}">${arena.badgeLabel}</span>`
+      : `<span class="compat-badge badge-nba">NBA 5v5 (94ft)</span>`;
+
     card.className = `court-card ${isSelected ? 'selected' : ''} ${isCurrentlyActive ? 'active-assigned' : ''}`;
     card.innerHTML = `
       <div class="court-preview-box">
         ${renderCourtSvg(arena.category, arena.code)}
       </div>
       <div class="card-info">
-        <div class="card-title" title="${arena.name}">${arena.name}</div>
+        <div class="court-card-header">
+          <div class="card-title" title="${arena.name}">${arena.name}</div>
+          ${badgeHtml}
+        </div>
         <div class="card-meta">
           <span class="card-code">${arena.code}</span>
           <span>${arena.shard ? `Shard ${arena.shard}` : 'Mod'}</span>
         </div>
+        ${arena.description ? `<div class="card-desc">${arena.description}</div>` : ''}
       </div>
     `;
 
@@ -270,6 +325,17 @@ function renderArenas() {
         const match = allFloors.find(f => f.code === arena.code.replace('_int', '_int') || f.code.includes(arena.rawCode));
         selectedFloor = match || null;
       }
+
+      // Auto-configure Approach 2 Ruleset
+      if (arena.compatibility === 'hs_84ft') {
+        if (forceRulesetCheckbox) forceRulesetCheckbox.checked = true;
+        updateRulesetUI(true);
+        showToast('🟡 High School 84ft gym: Shot alignment ruleset enabled!');
+      } else {
+        if (forceRulesetCheckbox) forceRulesetCheckbox.checked = false;
+        updateRulesetUI(false);
+      }
+
       renderArenas();
       renderFloors();
       updateDock();
@@ -329,6 +395,16 @@ function updateDock() {
   } else {
     dockSelectedArena.textContent = 'None';
     applyBtn.disabled = true;
+  }
+
+  if (dockCourtScale) {
+    if (selectedArena) {
+      dockCourtScale.innerHTML = selectedArena.badgeLabel
+        ? `<span class="compat-badge ${selectedArena.badgeClass}">${selectedArena.badgeLabel}</span>`
+        : '<span class="compat-badge badge-nba">NBA 5v5 (94ft)</span>';
+    } else {
+      dockCourtScale.textContent = 'None';
+    }
   }
 
   if (selectedFloor) {
@@ -445,7 +521,11 @@ applyBtn.addEventListener('click', async () => {
 
   applyBtn.disabled = true;
   applyBtn.textContent = 'Applying...';
-  logDiag(`Applying ${selectedArena.name} & Floor to ${selectedTeam.name}...`);
+  const isHs = selectedArena.compatibility === 'hs_84ft';
+  const force84ft = forceRulesetCheckbox ? forceRulesetCheckbox.checked : isHs;
+  const rulesetLabel = force84ft ? '84-ft High School' : '94-ft Regulation';
+
+  logDiag(`Applying ${selectedArena.name} (${rulesetLabel} Ruleset) to ${selectedTeam.name}...`);
 
   try {
     const res = await fetch('/api/editor/apply', {
@@ -454,7 +534,8 @@ applyBtn.addEventListener('click', async () => {
       body: JSON.stringify({
         teamId: selectedTeam.id,
         arenaCode: selectedArena.code,
-        floorCode
+        floorCode,
+        force84ftRuleset: force84ft
       })
     });
 
@@ -463,12 +544,16 @@ applyBtn.addEventListener('click', async () => {
       activeSlots[selectedTeam.id] = {
         arenaCode: selectedArena.code,
         floorCode,
+        ruleset: data.ruleset || (force84ft ? '84ft' : '94ft'),
+        force84ftRuleset: force84ft,
+        compatibility: selectedArena.compatibility || 'nba_94ft',
         appliedAt: new Date().toISOString()
       };
 
       const liveNotice = data.liveMemoryUpdated ? 'Live memory written instantly in game!' : 'Saved to active profile (will apply when game launches)';
-      showToast(`${selectedTeam.name} court updated: ${selectedArena.name}!`);
-      logDiag(`Applied to ${selectedTeam.name}: Arena ${selectedArena.code}, Floor ${floorCode}. ${liveNotice}`);
+      const rulesetNotice = force84ft ? '[84ft Ruleset Enforced for Play Now]' : '[94ft Regulation]';
+      showToast(`${selectedTeam.name} court updated: ${selectedArena.name} ${rulesetNotice}`);
+      logDiag(`Applied to ${selectedTeam.name}: Arena ${selectedArena.code}, Floor ${floorCode}. ${rulesetNotice} ${liveNotice}`);
 
       updateActiveTeamCard();
       renderTeams();

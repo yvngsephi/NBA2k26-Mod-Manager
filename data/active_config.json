@@ -11,6 +11,24 @@
       "teamCode": "team_014",
       "arenaCode": "arena_014_int",
       "floorCode": "arena_014_int_floor",
+      "ruleset": "94ft",
+      "compatibility": "nba_94ft",
+      "force84ftRuleset": false,
+      "appliedAt": "now"
+    },
+    "team_012": {
+      "teamCode": "team_012",
+      "arenaCode": "hsgym_int",
+      "floorCode": "hsgym_int",
+      "appliedAt": "now"
+    },
+    "team_010": {
+      "teamCode": "team_010",
+      "arenaCode": "hsgym_int",
+      "floorCode": "hsgym_int",
+      "ruleset": "84ft",
+      "compatibility": "hs_84ft",
+      "force84ftRuleset": true,
       "appliedAt": "now"
     }
   }

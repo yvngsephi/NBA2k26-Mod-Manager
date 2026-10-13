@@ -11,6 +11,7 @@ from ctypes import wintypes
 import json
 import os
 import re
+import struct
 import sys
 from pathlib import Path
 
@@ -190,9 +191,10 @@ def get_full_catalog() -> dict[str, object]:
     }
 
 
-def apply_assignment(team_code: str, arena_code: str, floor_code: str) -> dict[str, object]:
+def apply_assignment(team_code: str, arena_code: str, floor_code: str, ruleset: str = "auto") -> dict[str, object]:
     """
     Applies arena and floor directly to the game process if running,
+    enforces court dimension ruleset (84ft vs 94ft) in memory,
     and updates active_config.json.
     """
     config_path = Path(__file__).resolve().parent.parent / "data" / "active_config.json"
@@ -204,11 +206,26 @@ def apply_assignment(team_code: str, arena_code: str, floor_code: str) -> dict[s
         except Exception:
             pass
 
+    # Determine effective ruleset (84ft vs 94ft)
+    is_hs_gym = any(k in arena_code.lower() for k in ["hsgym", "aaugym", "diongym", "statechampionship"])
+    if ruleset in ("84ft", "true", "True") or (ruleset == "auto" and is_hs_gym):
+        effective_ruleset = "84ft"
+        compatibility = "hs_84ft"
+    elif "blacktop" in arena_code.lower() or "practice" in arena_code.lower() or "brickley" in arena_code.lower():
+        effective_ruleset = "blacktop"
+        compatibility = "street"
+    else:
+        effective_ruleset = "94ft"
+        compatibility = "nba_94ft"
+
     slot_key = f"team_{team_code}" if not team_code.startswith("team_") and team_code != "blacktop" else team_code
     config.setdefault("activeSlots", {})[slot_key] = {
         "teamCode": team_code,
         "arenaCode": arena_code,
         "floorCode": floor_code,
+        "ruleset": effective_ruleset,
+        "compatibility": compatibility,
+        "force84ftRuleset": effective_ruleset == "84ft",
         "appliedAt": "now"
     }
 
@@ -236,7 +253,6 @@ def apply_assignment(team_code: str, arena_code: str, floor_code: str) -> dict[s
                     if ptr_bytes and len(ptr_bytes) == 8:
                         table_base = int.from_bytes(ptr_bytes, "little")
                         if 0x10000 < table_base < 0x7FFFFFFFFFFF:
-                            # Stride walk up to 60 rows to find matching arena or write directly
                             target_arena_bytes = (arena_code.replace(".iff", "")[:32] + "\x00").encode("latin1")
                             target_floor_bytes = (floor_code.replace(".iff", "")[:38] + "\x00").encode("latin1")
 
@@ -249,9 +265,30 @@ def apply_assignment(team_code: str, arena_code: str, floor_code: str) -> dict[s
                                 ok1 = write_memory(handle, row_addr + 0xBA, target_arena_bytes)
                                 # Write floor_id at 0xE0
                                 ok2 = write_memory(handle, row_addr + 0xE0, target_floor_bytes)
+
+                                # Approach 2: Force Court Ruleset & Rim Offsets in stadium row
+                                if effective_ruleset == "84ft":
+                                    # 84-ft High School: dim flag=1, half-len=42.0ft, rim-Z=36.75ft
+                                    dim_flag_bytes = struct.pack("<I", 1)
+                                    half_len_bytes = struct.pack("<f", 42.0)
+                                    rim_z_bytes = struct.pack("<f", 36.75)
+                                    write_memory(handle, row_addr + 0x108, dim_flag_bytes)
+                                    write_memory(handle, row_addr + 0x10C, half_len_bytes)
+                                    write_memory(handle, row_addr + 0x110, rim_z_bytes)
+                                    details.append(f"Enforced 84-ft High School Ruleset at 0x{row_addr:X} (Rim Z = 36.75ft)")
+                                else:
+                                    # 94-ft NBA Regulation: dim flag=0, half-len=47.0ft, rim-Z=41.75ft
+                                    dim_flag_bytes = struct.pack("<I", 0)
+                                    half_len_bytes = struct.pack("<f", 47.0)
+                                    rim_z_bytes = struct.pack("<f", 41.75)
+                                    write_memory(handle, row_addr + 0x108, dim_flag_bytes)
+                                    write_memory(handle, row_addr + 0x10C, half_len_bytes)
+                                    write_memory(handle, row_addr + 0x110, rim_z_bytes)
+                                    details.append(f"Enforced 94-ft Regulation Ruleset at 0x{row_addr:X} (Rim Z = 41.75ft)")
+
                                 if ok1 and ok2:
                                     memory_written = True
-                                    details.append(f"Written to stadium row {row_idx} at 0x{row_addr:X}")
+                                    details.append(f"Written stadium & floor to row {row_idx} at 0x{row_addr:X}")
             finally:
                 kernel32.CloseHandle(handle)
 
@@ -262,6 +299,9 @@ def apply_assignment(team_code: str, arena_code: str, floor_code: str) -> dict[s
         "team": team_code,
         "arena": arena_code,
         "floor": floor_code,
+        "ruleset": effective_ruleset,
+        "compatibility": compatibility,
+        "force84ftRuleset": effective_ruleset == "84ft",
         "details": details
     }
 
@@ -307,7 +347,8 @@ def main():
             team = sys.argv[2]
             arena = sys.argv[3]
             floor = sys.argv[4]
-            print(json.dumps(apply_assignment(team, arena, floor)))
+            ruleset = sys.argv[5] if len(sys.argv) > 5 else "auto"
+            print(json.dumps(apply_assignment(team, arena, floor, ruleset)))
         else:
             print(json.dumps({"error": f"Unknown command {cmd}"}))
     else:
