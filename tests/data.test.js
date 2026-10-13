@@ -22,8 +22,9 @@ test('teams.json contains all 30 NBA teams plus Blacktop with genuine codes', ()
   const teamsPath = path.join(__dirname, '..', 'data', 'teams.json');
   assert.ok(fs.existsSync(teamsPath), 'teams.json must exist');
   const teams = JSON.parse(fs.readFileSync(teamsPath, 'utf8'));
-  assert.ok(Array.isArray(teams), 'teams must be an array');
-  assert.equal(teams.length, 31, 'should have 30 NBA teams plus Blacktop');
+  assert.ok(teams.length >= 31, 'should have at least 30 NBA teams plus Blacktop');
+  const currentNBA = teams.filter(t => t.isCurrentNBA);
+  assert.equal(currentNBA.length, 30, 'should have exactly 30 current NBA teams');
 
   for (const t of teams) {
     assert.ok(t.id, 'team must have id');

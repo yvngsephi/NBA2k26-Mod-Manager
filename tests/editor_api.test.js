@@ -74,6 +74,14 @@ test('Editor API endpoints provide live status, catalog, and apply/reset without
 
     const savedAfterReset = JSON.parse(fs.readFileSync(mockConfigPath, 'utf8'));
     assert.equal(savedAfterReset.activeSlots.team_014, undefined);
+
+    // 5. Test dynamic roster sync endpoint
+    const syncRes = await fetch(`${baseUrl}/api/roster/sync`, { method: 'POST' });
+    assert.equal(syncRes.status, 200);
+    const syncData = await syncRes.json();
+    assert.equal(syncData.success, true);
+    assert.ok(Array.isArray(syncData.targets));
+    assert.ok(syncData.targets.length >= 31);
   } finally {
     server.close();
     fs.rmSync(tmpDir, { recursive: true, force: true });

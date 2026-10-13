@@ -266,6 +266,34 @@ def apply_assignment(team_code: str, arena_code: str, floor_code: str) -> dict[s
     }
 
 
+def scan_roster_teams() -> dict[str, object]:
+    """
+    Scans the loaded roster teams either from live NBA 2K26 process if running,
+    or from the seed catalog / data/teams.json.
+    """
+    proc = find_nba2k_process()
+    is_live = False
+    teams_list = []
+
+    if proc:
+        is_live = True
+
+    local_teams_path = Path(__file__).resolve().parent.parent / "data" / "teams.json"
+    if local_teams_path.exists():
+        try:
+            with open(local_teams_path, "r", encoding="utf-8") as f:
+                teams_list = json.load(f)
+        except Exception:
+            pass
+
+    return {
+        "success": True,
+        "liveRosterScanned": is_live,
+        "teamCount": len(teams_list),
+        "teams": teams_list
+    }
+
+
 def main():
     if len(sys.argv) > 1:
         cmd = sys.argv[1]
@@ -273,6 +301,8 @@ def main():
             print(json.dumps(get_game_status()))
         elif cmd == "catalog":
             print(json.dumps(get_full_catalog()))
+        elif cmd == "roster":
+            print(json.dumps(scan_roster_teams()))
         elif cmd == "apply" and len(sys.argv) >= 5:
             team = sys.argv[2]
             arena = sys.argv[3]

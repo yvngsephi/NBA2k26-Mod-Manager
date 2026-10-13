@@ -27,8 +27,20 @@
     <!-- Left Sidebar: Teams Navigation -->
     <aside class="sidebar-teams">
       <div class="sidebar-header">
-        <div class="sidebar-title">Select Team</div>
-        <input type="text" id="teamSearchInput" class="input-filter" placeholder="Filter teams...">
+        <div class="sidebar-title-row">
+          <div class="sidebar-title">Select Team</div>
+          <button id="syncRosterBtn" class="btn btn-sync" title="Sync / Refresh Roster from NBA 2K26">
+            <svg class="sync-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Sync Roster
+          </button>
+        </div>
+        <div class="team-category-tabs" id="teamCategoryTabs">
+          <button class="team-tab-btn active" data-cat="all">All</button>
+          <button class="team-tab-btn" data-cat="nba_current">Current NBA</button>
+          <button class="team-tab-btn" data-cat="classic">Classic</button>
+          <button class="team-tab-btn" data-cat="street">Street</button>
+        </div>
+        <input type="text" id="teamSearchInput" class="input-filter" placeholder="Search teams...">
       </div>
       <div class="team-list" id="teamList">
         <!-- Rendered via app.js -->

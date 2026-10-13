@@ -11,12 +11,15 @@ let currentArenaCategory = 'all';
 let arenaSearchQuery = '';
 let floorSearchQuery = '';
 let teamFilterQuery = '';
+let currentTeamCategory = 'all';
 let gameStatus = { running: false, pid: null, statusMessage: 'Connecting...' };
 
 // DOM Elements
 const gameStatusPill = document.getElementById('gameStatusPill');
 const gameStatusText = document.getElementById('gameStatusText');
 const refreshStatusBtn = document.getElementById('refreshStatusBtn');
+const syncRosterBtn = document.getElementById('syncRosterBtn');
+const teamCategoryTabs = document.getElementById('teamCategoryTabs');
 const teamSearchInput = document.getElementById('teamSearchInput');
 const teamList = document.getElementById('teamList');
 
@@ -147,8 +150,8 @@ async function loadInitialData() {
       activeSlots = statusData.activeSlots || {};
     }
 
-    // Default select Miami Heat
-    selectedTeam = allTeams.find(t => t.code === '014') || allTeams[0];
+    // Default select Miami Heat (verified 2K26 code 010)
+    selectedTeam = allTeams.find(t => t.code === '010' || t.abbr === 'MIA') || allTeams[0];
 
     updateStatusUI();
     renderTeams();
@@ -166,6 +169,10 @@ async function loadInitialData() {
 function renderTeams() {
   teamList.innerHTML = '';
   const filtered = allTeams.filter(t => {
+    if (currentTeamCategory === 'nba_current' && !t.isCurrentNBA) return false;
+    if (currentTeamCategory === 'classic' && t.category !== 'classic' && t.category !== 'classic_other') return false;
+    if (currentTeamCategory === 'street' && t.category !== 'street') return false;
+
     if (!teamFilterQuery) return true;
     const q = teamFilterQuery.toLowerCase();
     return t.name.toLowerCase().includes(q) || t.abbr?.toLowerCase().includes(q) || t.code?.includes(q);
@@ -367,6 +374,56 @@ floorSearchInput.addEventListener('input', (e) => {
 
 teamSearchInput.addEventListener('input', (e) => {
   teamFilterQuery = e.target.value.trim();
+  renderTeams();
+});
+
+// Sync Roster Function
+async function syncRoster() {
+  if (syncRosterBtn) {
+    syncRosterBtn.classList.add('spinning');
+    syncRosterBtn.disabled = true;
+  }
+  logDiag('Syncing loaded roster from NBA 2K26...');
+
+  try {
+    const res = await fetch('/api/roster/sync', { method: 'POST' });
+    const data = await res.json();
+    if (data.success && data.targets) {
+      allTeams = data.targets;
+      if (!selectedTeam || !allTeams.find(t => t.id === selectedTeam.id)) {
+        selectedTeam = allTeams.find(t => t.code === '010' || t.abbr === 'MIA') || allTeams[0];
+      }
+      renderTeams();
+      updateActiveTeamCard();
+      updateDock();
+
+      const msg = data.liveRosterScanned
+        ? `Synced live roster: ${data.teamCount} teams from active NBA 2K26 game!`
+        : `Refreshed roster: ${data.teamCount} verified NBA 2K26 teams ready.`;
+      showToast(msg);
+      logDiag(msg);
+    } else {
+      showToast('Roster sync failed');
+    }
+  } catch (err) {
+    showToast(`Sync error: ${err.message}`);
+    logDiag(`Roster sync error: ${err.message}`);
+  } finally {
+    if (syncRosterBtn) {
+      syncRosterBtn.classList.remove('spinning');
+      syncRosterBtn.disabled = false;
+    }
+  }
+}
+
+syncRosterBtn?.addEventListener('click', syncRoster);
+
+teamCategoryTabs?.addEventListener('click', (e) => {
+  const btn = e.target.closest('.team-tab-btn');
+  if (!btn) return;
+  teamCategoryTabs.querySelectorAll('.team-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentTeamCategory = btn.dataset.cat;
   renderTeams();
 });
 

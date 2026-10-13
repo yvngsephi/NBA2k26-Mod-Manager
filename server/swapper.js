@@ -6,40 +6,39 @@ const { execFileSync } = require('node:child_process');
 const userHome = process.env.USERPROFILE || os.homedir();
 const PYTHON_BIN = process.env.PYTHON_BIN || path.join(userHome, 'Downloads', '2k26mods', '2kvenuelab', 'app', 'python', 'python.exe');
 const UNPACK_TOOL = process.env.UNPACK_TOOL || path.join(userHome, 'Downloads', '2k26mods', '2kvenuelab', 'app', 'tools', 'nba2k26_unpack_iff.py');
-const MERGE_TOOL = path.join(__dirname, 'merge_floor.py');
 
 const TEAM_MAP = {
   blacktop: 'blacktop',
   team_76ers: '000',
-  team_celtics: '001',
-  team_clippers: '002',
+  team_bucks: '001',
+  team_wizards: '002',
   team_bulls: '003',
   team_cavaliers: '004',
-  team_mavericks: '005',
-  team_nuggets: '006',
-  team_pistons: '008',
-  team_warriors: '009',
-  team_rockets: '010',
-  team_pacers: '011',
-  team_grizzlies: '013',
-  team_heat: '014',
-  team_bucks: '030',
-  team_timberwolves: '016',
-  team_nets: '017',
-  team_knicks: '018',
-  team_magic: '019',
-  team_pelicans: '020',
-  team_suns: '021',
-  team_blazers: '022',
-  team_kings: '023',
-  team_spurs: '024',
-  team_thunder: '025',
-  team_jazz: '026',
-  team_wizards: '027',
-  team_hornets: '028',
-  team_raptors: '029',
-  team_hawks: '031',
-  team_lakers: '015'
+  team_celtics: '005',
+  team_clippers: '006',
+  team_grizzlies: '008',
+  team_hawks: '009',
+  team_heat: '010',
+  team_pelicans: '011',
+  team_jazz: '012',
+  team_kings: '013',
+  team_knicks: '014',
+  team_lakers: '015',
+  team_magic: '016',
+  team_mavericks: '017',
+  team_nets: '018',
+  team_nuggets: '019',
+  team_pacers: '020',
+  team_pistons: '021',
+  team_raptors: '022',
+  team_rockets: '023',
+  team_thunder: '024',
+  team_spurs: '025',
+  team_suns: '026',
+  team_timberwolves: '027',
+  team_blazers: '028',
+  team_warriors: '029',
+  team_hornets: '031'
 };
 
 class SwapperEngine {
@@ -90,84 +89,17 @@ class SwapperEngine {
     return `levels/arena_${clean}.iff`;
   }
 
-  resolveLocalSource(code, isFloor = false) {
-    if (!code) return null;
-    if (fs.existsSync(code)) return code;
-
-    let clean = String(code).replace(/\.iff$/, '').replace(/\\/g, '/');
-    if (clean.startsWith('levels/')) clean = clean.replace(/^levels\//, '');
-    if (clean.startsWith('arena_')) clean = clean.replace(/^arena_/, '');
-    if (clean.startsWith('floor_')) {
-      clean = clean.replace(/^floor_/, '');
-      isFloor = true;
-    }
-
-    const candidates = [];
-    if (isFloor) {
-      candidates.push(
-        path.join(this.modsPath, `arena_${clean}_floor.iff`),
-        path.join(this.modsPath, `${clean}_floor.iff`),
-        path.join(this.modsPath, `arena_${clean}.iff`),
-        path.join(this.modsPath, `${clean}.iff`),
-        path.join(this.getLevelsDir(), `arena_${clean}_floor.iff`),
-        path.join(this.getLevelsDir(), `${clean}_floor.iff`)
-      );
-    } else {
-      candidates.push(
-        path.join(this.modsPath, `arena_${clean}.iff`),
-        path.join(this.modsPath, `${clean}.iff`),
-        path.join(this.getLevelsDir(), `arena_${clean}.iff`),
-        path.join(this.getLevelsDir(), `${clean}.iff`)
-      );
-      const courtskoDir = path.join(this.modsPath, 'courtsko');
-      if (fs.existsSync(courtskoDir)) {
-        try {
-          const subs = fs.readdirSync(courtskoDir);
-          for (const s of subs) {
-            candidates.push(
-              path.join(courtskoDir, s, 'arena_blacktop_ext.iff'),
-              path.join(courtskoDir, s, `arena_${clean}.iff`),
-              path.join(courtskoDir, s, `${clean}.iff`)
-            );
-          }
-        } catch {}
-      }
-    }
-
-    for (const cand of candidates) {
-      if (fs.existsSync(cand)) {
-        try {
-          if (fs.statSync(cand).isFile()) return cand;
-        } catch {}
-      }
-    }
-    return null;
-  }
-
-  mergeFloorIntoArena(arenaPath, floorPath) {
-    if (!fs.existsSync(arenaPath) || !fs.existsSync(floorPath)) return false;
-    if (!fs.existsSync(PYTHON_BIN) || !fs.existsSync(MERGE_TOOL)) return false;
-    try {
-      execFileSync(PYTHON_BIN, [MERGE_TOOL, arenaPath, floorPath], { stdio: 'pipe' });
-      return true;
-    } catch (err) {
-      console.error('Merge floor into arena warning:', err.message);
-      return false;
-    }
-  }
-
   deployFileFromGameOrDisk(source, destPaths, isFloor = false) {
     if (!source || !destPaths || destPaths.length === 0) return false;
 
-    // 1. Check if source resolves to a local file on disk
-    const localFile = this.resolveLocalSource(source, isFloor);
-    if (localFile && fs.existsSync(localFile)) {
+    // Check if source is an existing file on disk (e.g. downloaded mod in courtsko or test mock)
+    if (fs.existsSync(source)) {
       try {
         const firstDest = destPaths[0];
         const dir = path.dirname(firstDest);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
         if (fs.existsSync(firstDest)) fs.unlinkSync(firstDest);
-        fs.copyFileSync(localFile, firstDest);
+        fs.copyFileSync(source, firstDest);
 
         for (let i = 1; i < destPaths.length; i++) {
           const d = destPaths[i];
@@ -361,10 +293,6 @@ class SwapperEngine {
         const okFloor = this.deployFileFromGameOrDisk(floorSource, floorDests, true);
         if (okFloor) {
           appliedFiles.push('levels/arena_blacktop_ext_floor.iff');
-          // Merge floor into the main arena iff so Blacktop natively displays the hardwood floor
-          for (let i = 0; i < arenaDests.length; i++) {
-            this.mergeFloorIntoArena(arenaDests[i], floorDests[i]);
-          }
         }
       } else if (matchedMod) {
         // Remove lingering NBA floor files if switching to a street court
@@ -377,22 +305,27 @@ class SwapperEngine {
         }
       }
     } else {
-      // Regular NBA Team
-      const teamCode = TEAM_MAP[slot] || slot.replace(/^team_/, '');
+      // Regular NBA or Custom Team
+      const targetArena = params.targetArenaCode || (TEAM_MAP[slot] ? `arena_${TEAM_MAP[slot]}_int` : (slot.startsWith('arena_') ? slot : `arena_${slot.replace(/^team_/, '')}_int`));
+      const targetFloor = params.targetFloorCode || (TEAM_MAP[slot] ? `arena_${TEAM_MAP[slot]}_int_floor` : (slot.startsWith('arena_') ? `${slot}_floor` : `arena_${slot.replace(/^team_/, '')}_int_floor`));
+
+      const arenaFileName = targetArena.endsWith('.iff') ? targetArena : `${targetArena}.iff`;
+      const floorFileName = targetFloor.endsWith('.iff') ? targetFloor : `${targetFloor}.iff`;
+
       const arenaDests = [
-        path.join(levelsDir, `arena_${teamCode}_int.iff`),
-        path.join(this.modsPath, `arena_${teamCode}_int.iff`)
+        path.join(levelsDir, arenaFileName),
+        path.join(this.modsPath, arenaFileName)
       ];
       const floorDests = [
-        path.join(levelsDir, `arena_${teamCode}_int_floor.iff`),
-        path.join(this.modsPath, `arena_${teamCode}_int_floor.iff`)
+        path.join(levelsDir, floorFileName),
+        path.join(this.modsPath, floorFileName)
       ];
 
       let arenaSource = sourceFiles?.stadium || sourceFiles?.blacktop || matchedMod?.files?.blacktop || effectiveArena;
       if (arenaSource) {
         const ok = this.deployFileFromGameOrDisk(arenaSource, arenaDests, false);
         if (ok) {
-          appliedFiles.push(`levels/arena_${teamCode}_int.iff`);
+          appliedFiles.push(`levels/${arenaFileName}`);
         }
       }
 
@@ -400,7 +333,7 @@ class SwapperEngine {
       if (floorSource) {
         const okFloor = this.deployFileFromGameOrDisk(floorSource, floorDests, true);
         if (okFloor) {
-          appliedFiles.push(`levels/arena_${teamCode}_int_floor.iff`);
+          appliedFiles.push(`levels/${floorFileName}`);
         }
       }
     }
@@ -425,7 +358,7 @@ class SwapperEngine {
     };
   }
 
-  resetSlot(slot) {
+  resetSlot(slot, targetArenaCode = null, targetFloorCode = null) {
     const levelsDir = this.getLevelsDir();
 
     if (slot === 'blacktop') {
@@ -445,12 +378,15 @@ class SwapperEngine {
         }
       }
     } else {
-      const teamCode = TEAM_MAP[slot] || slot.replace(/^team_/, '');
+      const targetArena = targetArenaCode || (TEAM_MAP[slot] ? `arena_${TEAM_MAP[slot]}_int` : (slot.startsWith('arena_') ? slot : `arena_${slot.replace(/^team_/, '')}_int`));
+      const targetFloor = targetFloorCode || (TEAM_MAP[slot] ? `arena_${TEAM_MAP[slot]}_int_floor` : (slot.startsWith('arena_') ? `${slot}_floor` : `arena_${slot.replace(/^team_/, '')}_int_floor`));
+      const arenaFileName = targetArena.endsWith('.iff') ? targetArena : `${targetArena}.iff`;
+      const floorFileName = targetFloor.endsWith('.iff') ? targetFloor : `${targetFloor}.iff`;
       const targets = [
-        path.join(levelsDir, `arena_${teamCode}_int.iff`),
-        path.join(this.modsPath, `arena_${teamCode}_int.iff`),
-        path.join(levelsDir, `arena_${teamCode}_int_floor.iff`),
-        path.join(this.modsPath, `arena_${teamCode}_int_floor.iff`)
+        path.join(levelsDir, arenaFileName),
+        path.join(this.modsPath, arenaFileName),
+        path.join(levelsDir, floorFileName),
+        path.join(this.modsPath, floorFileName)
       ];
       for (const t of targets) {
         if (fs.existsSync(t)) {

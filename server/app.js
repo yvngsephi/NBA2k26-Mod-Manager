@@ -90,15 +90,33 @@ function createApp(options = {}) {
   });
 
   const courts = loadCourts(options.courtsPath);
-  const targets = loadTeams(options.teamsPath);
+  let targets = loadTeams(options.teamsPath);
 
-  // Targets endpoint (30 NBA teams + Blacktop)
+  // Targets endpoint
   app.get('/api/targets', (req, res) => {
     res.json({
       success: true,
       targets
     });
   });
+
+  // Dynamic Roster Sync / Refresh endpoint
+  const handleRosterSync = (req, res) => {
+    const rosterResult = runConnector('roster');
+    if (rosterResult && rosterResult.teams && rosterResult.teams.length > 0) {
+      targets = rosterResult.teams;
+    } else {
+      targets = loadTeams(options.teamsPath);
+    }
+    res.json({
+      success: true,
+      liveRosterScanned: rosterResult?.liveRosterScanned || false,
+      teamCount: targets.length,
+      targets
+    });
+  };
+  app.get('/api/roster/sync', handleRosterSync);
+  app.post('/api/roster/sync', handleRosterSync);
 
   // Legacy status endpoint
   app.get('/api/status', (req, res) => {
@@ -165,6 +183,9 @@ function createApp(options = {}) {
     }
 
     const effectiveFloor = floorCode || arenaCode.replace('_int', '_int_floor');
+    const team = targets.find(t => t.id === teamId || t.code === teamId || t.abbr === teamId);
+    const targetArenaCode = team?.arenaCode;
+    const targetFloorCode = team?.floorCode;
 
     // 1. Deploy court and floor to mods slot directly from game manifest or local mod
     try {
@@ -172,7 +193,9 @@ function createApp(options = {}) {
         slot: teamId,
         courtId: arenaCode,
         arenaCode,
-        floorCode: effectiveFloor
+        floorCode: effectiveFloor,
+        targetArenaCode,
+        targetFloorCode
       });
     } catch (err) {
       console.error('File deployment warning:', err.message);
@@ -198,14 +221,14 @@ function createApp(options = {}) {
       return res.status(400).json({ success: false, error: 'teamId is required' });
     }
 
+    const team = targets.find(t => t.id === teamId || t.code === teamId || t.abbr === teamId);
     try {
-      swapper.resetSlot(teamId);
+      swapper.resetSlot(teamId, team?.arenaCode, team?.floorCode);
     } catch (err) {
       console.error('Reset slot error:', err.message);
     }
 
     // If game running, reset in memory to default
-    const team = targets.find(t => t.id === teamId);
     if (team && team.arenaCode) {
       runConnector('apply', [teamId, team.arenaCode, team.floorCode || team.arenaCode]);
     }
